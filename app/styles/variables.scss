@@ -7,6 +7,17 @@
 $color-black: #000000;
 $color-white: #ffffff;
 
+:root {
+  --bg-page: #1a1c1b;
+  --bg-card: #302f2c;
+  --bg-card-alt: rgba(48, 47, 44, 0.3);
+  --text-primary: #d9fb06;
+  --text-secondary: #888680;
+  --text-light: #dfddd6;
+  --text-inverse: #1a1c1b;
+  --border-light: rgba(63, 72, 22, 0.5);
+  --border-medium: #3f4816;
+}
 
 // 🔠 Typography
 $font-base: 'Helvetica Now Display', sans-serif;
