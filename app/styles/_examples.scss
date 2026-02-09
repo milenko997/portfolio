@@ -1,0 +1,33 @@
+// ----------------------------------------------------
+// This file only use as documetation for developers
+// DO NOT import this file into globals.scss or any other file
+// ----------------------------------------------------
+
+// Example how to use mixins
+// @include flex-center;
+// @include shadow(0.2);
+// @include respond(md) { font-size: 14px; }
+
+// Example how to use variables
+// color: $primary-color;
+// font-family: $font-base;
+
+// Example for combinations
+// .card {
+//   @include shadow;
+//   background: $white;
+//   padding: $spacing-md;
+//
+//   @include respond(sm) {
+//     padding: $spacing-sm;
+//   }
+// }
+
+// @use '../styles/variables' as vars;
+
+// .button {
+//   background: vars.$color-primary;
+//   color: vars.$color-text-inverse;
+//   border-radius: vars.$border-radius-md;
+//   padding: vars.$spacing-sm vars.$spacing-md;
+// }

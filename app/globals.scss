@@ -1,0 +1,12 @@
+@use "./styles/mixins.scss" as *;
+@use "./styles/fonts.scss" as *;
+@use "./styles/variables.scss" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $color-black;
+  overflow-x: hidden;
+}
