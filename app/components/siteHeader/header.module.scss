@@ -1,0 +1,95 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(26, 28, 27, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.logo span {
+  color: var(--text-secondary);
+}
+
+.navDesktop {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .navDesktop {
+    display: flex;
+  }
+}
+
+.navLink {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.mobileMenuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.mobileMenuBtn:hover {
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .mobileMenuBtn {
+    display: none;
+  }
+}
+
+.navMobile {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px 24px;
+  gap: 16px;
+  background: var(--bg-page);
+  border-top: 1px solid var(--border-light);
+}
+
+.navMobile .navLink {
+  padding: 8px 0;
+}
+
+.navMobile .btn {
+  margin-top: 8px;
+}
