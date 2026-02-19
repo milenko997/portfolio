@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './contact.module.scss';
 
 const Contact = () => {
@@ -10,6 +11,7 @@ const Contact = () => {
     message: '',
   });
 
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -21,15 +23,19 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!recaptchaValue) {
+      alert('Please confirm you are not a robot.');
+      return;
+    }
+
     setLoading(true);
 
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(form),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, recaptcha: recaptchaValue }),
       });
 
       if (!res.ok) {
@@ -38,6 +44,7 @@ const Contact = () => {
 
       setSuccess(true);
       setForm({ name: '', email: '', message: '' });
+      setRecaptchaValue(null);
     } catch (error) {
       console.error(error);
       alert('Something went wrong.');
@@ -64,10 +71,7 @@ const Contact = () => {
 
           <div className={styles.contactFormWrapper}>
             {!success ? (
-              <form
-                onSubmit={handleSubmit}
-                className={styles.contactForm}
-              >
+              <form onSubmit={handleSubmit} className={styles.contactForm}>
                 <div className={styles.formGroup}>
                   <label>Name</label>
                   <input
@@ -98,6 +102,13 @@ const Contact = () => {
                     value={form.message}
                     onChange={handleChange}
                     required
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <ReCAPTCHA
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                    onChange={(value) => setRecaptchaValue(value)}
                   />
                 </div>
 

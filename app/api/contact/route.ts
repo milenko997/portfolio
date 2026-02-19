@@ -2,13 +2,28 @@ import { Resend } from 'resend';
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, message, recaptcha } = await req.json();
 
-    if (!name || !email || !message) {
+    if (!name || !email || !message || !recaptcha) {
       return Response.json(
-        { error: 'All fields are required' },
+        { error: 'All fields and reCAPTCHA are required' },
         { status: 400 }
       );
+    }
+
+    const verifyRes = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptcha}`,
+      }
+    );
+
+    const json = await verifyRes.json();
+
+    if (!json.success) {
+      return Response.json({ error: 'Invalid reCAPTCHA' }, { status: 400 });
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
