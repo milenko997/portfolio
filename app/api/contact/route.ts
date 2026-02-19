@@ -22,8 +22,11 @@ export async function POST(req: Request) {
 
     const json = await verifyRes.json();
 
-    if (!json.success) {
-      return Response.json({ error: 'Invalid reCAPTCHA' }, { status: 400 });
+    if (!json.success || json.score < 0.5) {
+      return Response.json(
+        { error: 'reCAPTCHA verification failed' },
+        { status: 400 }
+      );
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);

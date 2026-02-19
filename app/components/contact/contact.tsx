@@ -1,41 +1,36 @@
 'use client';
 
 import { useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import styles from './contact.module.scss';
 
-const Contact = () => {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+const ContactForm = () => {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!recaptchaValue) {
-      alert('Please confirm you are not a robot.');
+    if (!executeRecaptcha) {
+      alert('reCAPTCHA not yet available');
       return;
     }
 
     setLoading(true);
 
     try {
+      const token = await executeRecaptcha('contact_form');
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, recaptcha: recaptchaValue }),
+        body: JSON.stringify({ ...form, recaptcha: token }),
       });
 
       if (!res.ok) {
@@ -44,7 +39,6 @@ const Contact = () => {
 
       setSuccess(true);
       setForm({ name: '', email: '', message: '' });
-      setRecaptchaValue(null);
     } catch (error) {
       console.error(error);
       alert('Something went wrong.');
@@ -62,10 +56,8 @@ const Contact = () => {
               <span className={styles.sectionLabel}>Contact</span>
               <h2 className={styles.sectionTitle}>Let's Work Together</h2>
             </div>
-
             <p className={styles.contactText}>
-              Have a project in mind or want to collaborate? I'd love to hear
-              from you.
+              Have a project in mind or want to collaborate? I'd love to hear from you.
             </p>
           </div>
 
@@ -74,49 +66,20 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className={styles.contactForm}>
                 <div className={styles.formGroup}>
                   <label>Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    required
-                  />
+                  <input type="text" name="name" value={form.name} onChange={handleChange} required />
                 </div>
 
                 <div className={styles.formGroup}>
                   <label>Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                  />
+                  <input type="email" name="email" value={form.email} onChange={handleChange} required />
                 </div>
 
                 <div className={styles.formGroup}>
                   <label>Message</label>
-                  <textarea
-                    name="message"
-                    rows={5}
-                    value={form.message}
-                    onChange={handleChange}
-                    required
-                  />
+                  <textarea name="message" rows={5} value={form.message} onChange={handleChange} required />
                 </div>
 
-                <div className={styles.formGroup}>
-                  <ReCAPTCHA
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-                    onChange={(value) => setRecaptchaValue(value)}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-lg btn-full"
-                  disabled={loading}
-                >
+                <button type="submit" className="btn btn-primary btn-lg btn-full" disabled={loading}>
                   {loading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
@@ -132,5 +95,11 @@ const Contact = () => {
     </section>
   );
 };
+
+const Contact = () => (
+  <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}>
+    <ContactForm />
+  </GoogleReCaptchaProvider>
+);
 
 export default Contact;
