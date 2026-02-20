@@ -5,6 +5,12 @@
   padding: 96px 0;
 }
 
+@include respond(sm) {
+  .about {
+    padding: 56px 0;
+  }
+}
+
 .aboutGrid {
   display: grid;
   grid-template-columns: 1fr;

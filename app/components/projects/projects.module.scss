@@ -6,6 +6,12 @@
   background: var(--bg-card-alt);
 }
 
+@include respond(sm) {
+  .projects {
+    padding: 56px 0;
+  }
+}
+
 .projectsGrid {
   display: grid;
   grid-template-columns: 1fr;
