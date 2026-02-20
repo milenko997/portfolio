@@ -11,7 +11,7 @@ const About = () => {
                             <h2 className={style.sectionTitle}>Who I Am</h2>
                         </div>
 
-                        <p className={style.aboutBio}>I'm a passionate Full Stack Developer with 4+ years of experience crafting web applications. 
+                        <p className={style.aboutBio}>I'm a passionate Full Stack Developer with 5+ years of experience crafting web applications. 
                             I specialize in building scalable, user-centric solutions using modern technologies. 
                             From concept to deployment, I bring ideas to life with clean code and thoughtful design.</p>
 
