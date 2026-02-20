@@ -6,6 +6,12 @@
   background: var(--bg-card-alt);
 }
 
+@include respond(sm) {
+  .contact {
+    padding: 56px 0;
+  }
+}
+
 .contactGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -116,6 +122,12 @@ a.contactItem:hover .contact-icon svg {
   border: 1px solid var(--border-light);
   border-radius: 12px;
   padding: 32px;
+}
+
+@include respond(sm) {
+  .contactFormWrapper {
+    padding: 32px 16px;
+  }
 }
 
 .contactForm {

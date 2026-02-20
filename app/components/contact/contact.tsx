@@ -91,18 +91,18 @@ const ContactForm = () => {
             {!success ? (
               <form onSubmit={handleSubmit} className={styles.contactForm}>
                 <div className={styles.formGroup}>
-                  <label>Name</label>
-                  <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your name" required />
+                  <label htmlFor="name">Name</label>
+                  <input type="text" name="name" id="name" value={form.name} onChange={handleChange} placeholder="Your name" autoComplete="false" required />
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label>Email</label>
-                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="your@email.com" required />
+                  <label htmlFor="email">Email</label>
+                  <input type="email" name="email" id="email" value={form.email} onChange={handleChange} placeholder="your@email.com" autoComplete="false" required />
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label>Message</label>
-                  <textarea name="message" rows={5} value={form.message} onChange={handleChange} placeholder="Tell me about your project..." required />
+                  <label htmlFor="message">Message</label>
+                  <textarea name="message" id="message" rows={5} value={form.message} onChange={handleChange} placeholder="Tell me about your project..." autoComplete="false" required />
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-lg btn-full" disabled={loading}>
