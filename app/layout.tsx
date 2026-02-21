@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Milenko Ilic Full Stack Developer",
     images: [
       {
-        url: "https://portfolio-pi-vert-10.vercel.app/og-image.png",
+        url: "https://milenkoilic.dev/og-image.png",
         width: 1200,
         height: 630,
         alt: "Milenko Ilic Portfolio",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Milenko Ilic - Full Stack Developer",
     description:
       "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
-    images: ["https://portfolio-pi-vert-10.vercel.app/og-image.png"],
+    images: ["https://milenkoilic.dev/og-image.png"],
   },
 };
 
