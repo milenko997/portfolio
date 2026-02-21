@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 My Portfolio Website
 
-## Getting Started
+Personal portfolio website built with Next.js.<br>
+Showcasing my projects, skills, and ways to get in touch.
 
-First, run the development server:
+Live version: milenkoilic.dev
 
+🛠 Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- SCSS
+- Vercel (deployment)
+
+📦 Getting Started
+
+Clone the repository:
+```
+git@github.com:milenko997/portfolio.git
+```
+
+Navigate into the project folder:
+```
+cd portfolio
+```
+
+Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Open your browser and visit:<br>
+http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If everything works — congrats 🎉<br>
+If not - welcome to frontend development.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+🤓 Developer Notes
 
-To learn more about Next.js, take a look at the following resources:
+If something breaks, it’s probably caching.<br>
+If it’s not caching, it’s probably TypeScript.<br>
+If it’s not TypeScript… it’s definitely my fault.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📬 Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you like the project, feel free to reach out.<br>
+If you find a bug… please pretend you didn’t.
+```
+                            ..,,,,,,,,,.. 
+                     .,;%%%%%%%%%%%%%%%%%%%%;,. 
+                   %%%%%%%%%%%%%%%%%%%%////%%%%%%, .,;%%;, 
+            .,;%/,%%%%%/////%%%%%%%%%%%%%%////%%%%,%%//%%%, 
+        .,;%%%%/,%%%///%%%%%%%%%%%%%%%%%%%%%%%%%%%%,////%%%%;, 
+     .,%%%%%%//,%%%%%%%%%%%%%%%%@@%a%%%%%%%%%%%%%%%%,%%/%%%%%%%;, 
+   .,%//%%%%//,%%%%///////%%%%%%%@@@%%%%%%///////%%%%,%%//%%%%%%%%, 
+ ,%%%%%///%%//,%%//%%%%%///%%%%%@@@%%%%%////%%%%%%%%%,/%%%%%%%%%%%%% 
+.%%%%%%%%%////,%%%%%%%//%///%%%%@@@@%%%////%%/////%%%,/;%%%%%%%%/%%% 
+%/%%%%%%%/////,%%%%///%%////%%%@@@@@%%%///%%/%%%%%//%,////%%%%//%%%' 
+%//%%%%%//////,%/%a`  'a%///%%%@@@@@@%%////a`  'a%%%%,//%///%/%%%%% 
+%///%%%%%%///,%%%%@@aa@@%//%%%@@@@S@@@%%///@@aa@@%%%%%,/%////%%%%% 
+%%//%%%%%%%//,%%%%%///////%%%@S@@@@SS@@@%%/////%%%%%%%,%////%%%%%' 
+%%//%%%%%%%//,%%%%/////%%@%@SS@@@@@@@S@@@@%%%%/////%%%,////%%%%%' 
+`%/%%%%//%%//,%%%///%%%%@@@S@@@@@@@@@@@@@@@S%%%%////%%,///%%%%%' 
+  %%%%//%%%%/,%%%%%%%%@@@@@@@@@@@@@@@@@@@@@SS@%%%%%%%%,//%%%%%' 
+  `%%%//%%%%/,%%%%@%@@@@@@@@@@@@@@@@@@@@@@@@@S@@%%%%%,/////%%' 
+   `%%%//%%%/,%%%@@@SS@@SSs@@@@@@@@@@@@@sSS@@@@@@%%%,//%%//%' 
+    `%%%%%%/  %%S@@SS@@@@@Ss` .,,.    'sS@@@S@@@@%'  ///%/%' 
+      `%%%/    %SS@@@@SSS@@S.         .S@@SSS@@@@'    //%%' 
+               /`S@@@@@@SSSSSs,     ,sSSSSS@@@@@' 
+             %%//`@@@@@@@@@@@@@Ss,sS@@@@@@@@@@@'/ 
+           %%%%@@00`@@@@@@@@@@@@@'@@@@@@@@@@@'//%% 
+       %%%%%%a%@@@@000aaaaaaaaa00a00aaaaaaa00%@%%%%% 
+    %%%%%%a%%@@@@@@@@@@000000000000000000@@@%@@%%%@%%% 
+ %%%%%%a%%@@@%@@@@@@@@@@@00000000000000@@@@@@@@@%@@%%@%% 
+%%%aa%@@@@@@@@@@@@@@0000000000000000000000@@@@@@@@%@@@%%%% 
+%%@@@@@@@@@@@@@@@00000000000000000000000000000@@@@@@@@@%%%%%
+```
