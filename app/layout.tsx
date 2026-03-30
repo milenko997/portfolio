@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Milenko Ilic - Full Stack Developer",
+  title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
   description:
     "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
   openGraph: {
-    title: "Milenko Ilic - Full Stack Developer",
+    title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
     description:
       "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
     siteName: "Milenko Ilic Full Stack Developer",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Milenko Ilic - Full Stack Developer",
+    title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
     description:
       "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
     images: ["https://milenkoilic.dev/og-image.png"],
