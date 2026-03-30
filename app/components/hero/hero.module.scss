@@ -66,11 +66,18 @@
 }
 
 .heroTitle {
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: 5rem;
   font-weight: 900;
-  line-height: 0.85;
+  line-height: 1;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+
+  @include respond (lg) {
+    font-size: 4rem;
+  }
+
+  @include respond (md) {
+    font-size: 3rem;
+  }
 }
 
 .heroTitle span {

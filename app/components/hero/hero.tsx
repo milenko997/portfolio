@@ -11,9 +11,8 @@ const Hero = () => {
                     Open to opportunities
                 </span>
                 <h1 className={styles.heroTitle}>
-                    <span>Full</span>
-                    <span>Stack</span>
-                    <span>Developer</span>
+                    Milenko Ilić<br />
+                    Full Stack Developer
                 </h1>
                 <p className={styles.heroTagline}>Building digital experiences that matter</p>
                 
