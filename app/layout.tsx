@@ -14,12 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const isProduction = process.env.VERCEL_ENV === "production";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://milenkoilic.dev"),
   alternates: {
-    canonical: "/",
+    canonical: "https://milenkoilic.dev/",
   },
   title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
   description:
@@ -32,8 +30,8 @@ export const metadata: Metadata = {
     "WordPress developer",
   ],
   robots: {
-    index: isProduction,
-    follow: isProduction,
+    index: true,
+    follow: true,
   },
   openGraph: {
     title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
@@ -68,6 +66,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Milenko Ilić",
+              jobTitle: "Full Stack Developer",
+              url: "https://milenkoilic.dev/",
+            }),
+          }}
+        />
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
@@ -84,18 +94,6 @@ export default function RootLayout({
                 page_path: window.location.pathname,
               });
             `,
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Milenko Ilić",
-              jobTitle: "Full Stack Developer",
-              url: "https://milenkoilic.dev/",
-            }),
           }}
         />
       </head>
