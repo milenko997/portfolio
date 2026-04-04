@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://milenkoilic.dev"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
   description:
     "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
