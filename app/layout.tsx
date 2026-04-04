@@ -14,6 +14,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const isProduction = process.env.VERCEL_ENV === "production";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://milenkoilic.dev"),
   alternates: {
@@ -22,10 +24,22 @@ export const metadata: Metadata = {
   title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
   description:
     "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
+  keywords: [
+    "Milenko Ilic",
+    "Full Stack Developer",
+    "Laravel developer",
+    "React developer",
+    "WordPress developer",
+  ],
+  robots: {
+    index: isProduction,
+    follow: isProduction,
+  },
   openGraph: {
     title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
     description:
       "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
+    url: "https://milenkoilic.dev",
     siteName: "Milenko Ilic Full Stack Developer",
     images: [
       {
@@ -48,9 +62,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
