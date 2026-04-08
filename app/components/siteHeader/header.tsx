@@ -5,6 +5,7 @@ import styles from './header.module.scss';
 
 const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   const toggleMobileMenu = () => {
     setIsMobileOpen((prev) => !prev);
@@ -16,7 +17,6 @@ const Header = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>('section[id]');
-    const navLinks = document.querySelectorAll<HTMLElement>(`.${styles.navDesktop} .${styles.navLink}`);
 
     function highlightNavOnScroll() {
       const scrollY = window.scrollY;
@@ -26,13 +26,8 @@ const Header = () => {
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id');
 
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-          navLinks.forEach((link) => {
-            (link as HTMLElement).style.color = '';
-            if (link.getAttribute('href') === `#${sectionId}`) {
-              (link as HTMLElement).style.color = '#d9fb06';
-            }
-          });
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight && sectionId) {
+          setActiveSection(sectionId);
         }
       });
     }
@@ -49,15 +44,15 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.headerContent}`}>
-        <a href="#home" className={styles.logo}>
+        <a href="/" className={styles.logo}>
           milenko<span>.</span>
         </a>
 
         <nav className={styles.navDesktop}>
-          <a href="#home" className={styles.navLink}>Home</a>
-          <a href="#projects" className={styles.navLink}>Projects</a>
-          <a href="#about" className={styles.navLink}>About</a>
-          <a href="#contact" className={styles.navLink}>Contact</a>
+          <a href="#home" className={`${styles.navLink} ${activeSection === 'home' ? styles.navLinkActive : ''}`}>Home</a>
+          <a href="#projects" className={`${styles.navLink} ${activeSection === 'projects' ? styles.navLinkActive : ''}`}>Projects</a>
+          <a href="#about" className={`${styles.navLink} ${activeSection === 'about' ? styles.navLinkActive : ''}`}>About</a>
+          <a href="#contact" className={`${styles.navLink} ${activeSection === 'contact' ? styles.navLinkActive : ''}`}>Contact</a>
           <a href="#contact" className="btn btn-primary">Let's Talk</a>
         </nav>
 
