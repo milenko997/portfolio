@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
     description:
       "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
-    url: "https://milenkoilic.dev",
+    url: "https://milenkoilic.dev/",
     siteName: "Milenko Ilic Full Stack Developer",
     images: [
       {
@@ -75,6 +75,17 @@ export default function RootLayout({
               name: "Milenko Ilić",
               jobTitle: "Full Stack Developer",
               url: "https://milenkoilic.dev/",
+              email: "milenko.ilic997@gmail.com",
+              description: "Full Stack Developer specializing in Laravel, React, and WordPress projects.",
+              sameAs: [
+                "https://github.com/milenko997",
+                "https://www.linkedin.com/in/milenko-ilic-637b7915b/",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Novi Sad",
+                addressCountry: "RS",
+              },
             }),
           }}
         />

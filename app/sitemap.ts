@@ -3,8 +3,10 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://milenkoilic.dev',
-      lastModified: new Date(),
+      url: 'https://milenkoilic.dev/',
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 1,
     },
   ]
 }
