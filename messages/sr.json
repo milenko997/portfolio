@@ -7,16 +7,16 @@
     "cta": "Kontaktiraj me"
   },
   "hero": {
-    "status": "Otvoren za prilike",
-    "tagline": "Gradim digitalna iskustva koja imaju značaj",
+    "status": "Dostupan za projekte",
+    "tagline": "Pravim web aplikacije koje se pamte",
     "viewProjects": "Pogledaj projekte",
     "getInTouch": "Kontaktiraj me"
   },
   "projects": {
     "label": "Portfolio",
     "title": "Istaknuti projekti",
-    "viewAll": "Pogledaj sve projekte",
-    "liveDemo": "Live demo"
+    "viewAll": "Svi projekti",
+    "liveDemo": "Poseti sajt"
   },
   "projectsPage": {
     "label": "Portfolio",
@@ -26,7 +26,7 @@
   "about": {
     "label": "O meni",
     "title": "Ko sam ja",
-    "bio": "Zdravo! Moje ime je Milenko Ilić, strastveni sam Full Stack Developer sa 5+ godina iskustva u izradi web aplikacija. Specijalizujem se za izgradnju skalabilnih rešenja usmerenih ka korisnicima koristeći moderne tehnologije. Od koncepta do implementacije, ideje pretačem u stvarnost čistim kodom i promišljenim dizajnom.",
+    "bio": "Zdravo! Ja sam Milenko Ilić, Full Stack Developer sa više od 5 godina iskustva u razvoju web aplikacija. Specijalizovan sam za pravljenje brzih i skalabilnih rešenja uz pomoć modernih tehnologija. Od ideje do produkcije – brinem o svakom detalju.",
     "location": "Novi Sad, Srbija",
     "experience": "Iskustvo",
     "skills": "Veštine i tehnologije",
@@ -34,26 +34,26 @@
       {
         "title": "Web Developer",
         "company": "Omnistreak",
-        "period": "Sep 2025 - Sadašnjost",
-        "description": "Održavanje i razvoj velikog custom WordPress webshopa za klijenta iz SAD-a. Odgovoran za kreiranje novih stranica, implementaciju prilagođenih funkcionalnosti i osiguranje performansi i skalabilnosti sajta."
+        "period": "Sep 2025 – danas",
+        "description": "Razvoj i održavanje velikog WordPress webshopa za klijenta iz SAD-a. Kreiram nove stranice, dodajem funkcionalnosti po meri i vodim računa o performansama i stabilnosti sajta."
       },
       {
         "title": "PHP Developer",
         "company": "Codeplicity",
-        "period": "Dec 2023 - Aug 2025",
-        "description": "Razvoj novih funkcionalnosti za veliku PHP web aplikaciju, sa fokusom na performanse, skalabilnost i čistu arhitekturu. Refaktorisanje legacy koda, pregled koda i saradnja sa timom od 10+ inženjera."
+        "period": "Dec 2023 – Aug 2025",
+        "description": "Radio sam na razvoju novih funkcionalnosti za veliku PHP aplikaciju, uz fokus na performanse i čistu arhitekturu. Refaktorisao sam stari kod, radio code review i sarađivao sa timom od 10+ developera."
       },
       {
         "title": "Web Developer",
         "company": "Decem Development",
-        "period": "Okt 2020 - Maj 2023",
-        "description": "Izrada 30+ responzivnih sajtova sa jakim SEO-om i podrškom za različite browsere. Prilagođavanje WordPress tema i plugina i poboljšanje brzine učitavanja stranica za do 25%."
+        "period": "Okt 2020 – Maj 2023",
+        "description": "Izradio sam 30+ responzivnih sajtova sa dobrim SEO-om i podrškom za sve browsere. Prilagođavao sam WordPress teme i plugine i poboljšao brzinu učitavanja stranica i do 25%."
       },
       {
         "title": "Freelance Web Developer",
-        "company": "Ceo svet",
-        "period": "Jun 2019 - Sadašnjost",
-        "description": "Isporuka prilagođenih WordPress i React rešenja, uključujući sajtove, landing stranice, blogove i eCommerce. Upravljanje projektima od početka do kraja, implementacija prilagođenih tema, plugina i Gutenberg rešenja."
+        "company": "Freelance",
+        "period": "Jun 2019 – danas",
+        "description": "Radim WordPress i React projekte za klijente širom sveta – sajtovi, landing stranice, blogovi i eCommerce. Vodim projekte od ideje do lansiranja i implementiram rešenja po meri."
       }
     ],
     "skillCategories": {
@@ -65,20 +65,20 @@
   },
   "contact": {
     "label": "Kontakt",
-    "title": "Hajde da radimo zajedno",
-    "text": "Imate projekat na umu ili želite da sarađujete? Rado bih čuo od vas. Pošaljite mi poruku i zajedno ćemo stvoriti nešto sjajno.",
+    "title": "Hajde da sarađujemo",
+    "text": "Imaš projekat ili ideju? Javi se – rado ću čuti o čemu se radi i vidimo kako možemo da sarađujemo.",
     "nameLabel": "Ime",
     "emailLabel": "Email",
     "messageLabel": "Poruka",
-    "namePlaceholder": "Vaše ime",
-    "emailPlaceholder": "vasa@email.com",
-    "messagePlaceholder": "Recite mi o vašem projektu...",
-    "send": "Pošalji poruku",
-    "sending": "Slanje...",
+    "namePlaceholder": "Tvoje ime",
+    "emailPlaceholder": "tvoj@email.com",
+    "messagePlaceholder": "Reci mi nešto o projektu...",
+    "send": "Pošalji",
+    "sending": "Šaljem...",
     "successTitle": "Poruka poslata!",
-    "successText": "Hvala što ste se javili. Odgovorim vam uskoro.",
-    "recaptchaAlert": "reCAPTCHA još nije dostupna",
-    "errorAlert": "Nešto je pošlo naopako."
+    "successText": "Hvala na poruci! Javiću se uskoro.",
+    "recaptchaAlert": "reCAPTCHA još nije spremna",
+    "errorAlert": "Došlo je do greške. Pokušaj ponovo."
   },
   "footer": {
     "rights": "Sva prava zadržana."

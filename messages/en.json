@@ -26,7 +26,7 @@
   "about": {
     "label": "About Me",
     "title": "Who I Am",
-    "bio": "Hi! My name is Milenko Ilić, I'm a passionate Full Stack Developer with 5+ years of experience crafting web applications. I specialize in building scalable, user-centric solutions using modern technologies. From concept to deployment, I bring ideas to life with clean code and thoughtful design.",
+    "bio": "Hi! I'm Milenko Ilić, a Full Stack Developer with 5+ years of experience building web applications. I focus on clean, scalable solutions using modern technologies — from initial concept all the way to deployment.",
     "location": "Novi Sad, Serbia",
     "experience": "Experience",
     "skills": "Skills & Technologies",
@@ -51,7 +51,7 @@
       },
       {
         "title": "Freelance Web Developer",
-        "company": "Worldwide",
+        "company": "Self-employed",
         "period": "Jun 2019 - Present",
         "description": "Delivered custom WordPress and React solutions, including websites, landing pages, blogs, and eCommerce. Managed projects end-to-end and implemented custom themes, plugins, and Gutenberg solutions."
       }
@@ -66,7 +66,7 @@
   "contact": {
     "label": "Contact",
     "title": "Let's Work Together",
-    "text": "Have a project in mind or want to collaborate? I'd love to hear from you. Drop me a message and let's create something amazing together.",
+    "text": "Got a project or just want to chat? Send me a message — I'd love to hear what you're working on.",
     "nameLabel": "Name",
     "emailLabel": "Email",
     "messageLabel": "Message",
