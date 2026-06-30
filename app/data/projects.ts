@@ -7,6 +7,8 @@ import framia from '@/assets/images/framia.png';
 import milionxl from '@/assets/images/milionxl.png';
 import popgor from '@/assets/images/popgor.png';
 import transporteri from '@/assets/images/transporteri.png';
+import decem from '@/assets/images/decem.png';
+import barkop from '@/assets/images/barkop.png';
 
 export type Project = {
   id: number;
@@ -72,5 +74,19 @@ export const projects: Project[] = [
     title: 'Framia',
     tech: ['WordPress', 'PHP', 'WooCommerce', 'Beaver Builder'],
     link: 'https://framia.se/',
+  },
+  {
+    id: 9,
+    img: decem,
+    title: 'Decem Development',
+    tech: ['WordPress', 'PHP', 'MySql', 'SCSS'],
+    link: 'https://decem.co/',
+  },
+  {
+    id: 10,
+    img: barkop,
+    title: 'BarKop',
+    tech: ['NEXT.js', 'React', 'SCSS'],
+    link: 'https://barkop.rs/',
   },
 ];
