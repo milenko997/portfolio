@@ -9,9 +9,43 @@ import styles from './page.module.scss';
 
 export const metadata: Metadata = {
   title: 'Projects - Milenko Ilic | Full Stack Developer',
-  description: 'All projects by Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress.',
+  description: 'Browse all projects by Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress.',
+  keywords: [
+    'Milenko Ilic',
+    'Full Stack Developer',
+    'Laravel developer',
+    'React developer',
+    'WordPress developer',
+    'web development projects',
+    'portfolio',
+  ],
   alternates: {
     canonical: 'https://milenkoilic.dev/projects',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Projects - Milenko Ilic | Full Stack Developer',
+    description: 'Browse all projects by Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress.',
+    url: 'https://milenkoilic.dev/projects',
+    siteName: 'Milenko Ilic Full Stack Developer',
+    images: [
+      {
+        url: 'https://milenkoilic.dev/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Milenko Ilic Portfolio',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Projects - Milenko Ilic | Full Stack Developer',
+    description: 'Browse all projects by Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress.',
+    images: ['https://milenkoilic.dev/og-image.png'],
   },
 };
 
