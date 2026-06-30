@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Početna",
+    "projects": "Projekti",
+    "about": "O meni",
+    "contact": "Kontakt",
+    "cta": "Kontaktiraj me"
+  },
+  "hero": {
+    "status": "Otvoren za prilike",
+    "tagline": "Gradim digitalna iskustva koja imaju značaj",
+    "viewProjects": "Pogledaj projekte",
+    "getInTouch": "Kontaktiraj me"
+  },
+  "projects": {
+    "label": "Portfolio",
+    "title": "Istaknuti projekti",
+    "viewAll": "Pogledaj sve projekte",
+    "liveDemo": "Live demo"
+  },
+  "projectsPage": {
+    "label": "Portfolio",
+    "title": "Svi projekti",
+    "back": "Nazad"
+  },
+  "about": {
+    "label": "O meni",
+    "title": "Ko sam ja",
+    "bio": "Zdravo! Moje ime je Milenko Ilić, strastveni sam Full Stack Developer sa 5+ godina iskustva u izradi web aplikacija. Specijalizujem se za izgradnju skalabilnih rešenja usmerenih ka korisnicima koristeći moderne tehnologije. Od koncepta do implementacije, ideje pretačem u stvarnost čistim kodom i promišljenim dizajnom.",
+    "location": "Novi Sad, Srbija",
+    "experience": "Iskustvo",
+    "skills": "Veštine i tehnologije",
+    "jobs": [
+      {
+        "title": "Web Developer",
+        "company": "Omnistreak",
+        "period": "Sep 2025 - Sadašnjost",
+        "description": "Održavanje i razvoj velikog custom WordPress webshopa za klijenta iz SAD-a. Odgovoran za kreiranje novih stranica, implementaciju prilagođenih funkcionalnosti i osiguranje performansi i skalabilnosti sajta."
+      },
+      {
+        "title": "PHP Developer",
+        "company": "Codeplicity",
+        "period": "Dec 2023 - Aug 2025",
+        "description": "Razvoj novih funkcionalnosti za veliku PHP web aplikaciju, sa fokusom na performanse, skalabilnost i čistu arhitekturu. Refaktorisanje legacy koda, pregled koda i saradnja sa timom od 10+ inženjera."
+      },
+      {
+        "title": "Web Developer",
+        "company": "Decem Development",
+        "period": "Okt 2020 - Maj 2023",
+        "description": "Izrada 30+ responzivnih sajtova sa jakim SEO-om i podrškom za različite browsere. Prilagođavanje WordPress tema i plugina i poboljšanje brzine učitavanja stranica za do 25%."
+      },
+      {
+        "title": "Freelance Web Developer",
+        "company": "Ceo svet",
+        "period": "Jun 2019 - Sadašnjost",
+        "description": "Isporuka prilagođenih WordPress i React rešenja, uključujući sajtove, landing stranice, blogove i eCommerce. Upravljanje projektima od početka do kraja, implementacija prilagođenih tema, plugina i Gutenberg rešenja."
+      }
+    ],
+    "skillCategories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "devops": "DevOps",
+      "tools": "Alati"
+    }
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Hajde da radimo zajedno",
+    "text": "Imate projekat na umu ili želite da sarađujete? Rado bih čuo od vas. Pošaljite mi poruku i zajedno ćemo stvoriti nešto sjajno.",
+    "nameLabel": "Ime",
+    "emailLabel": "Email",
+    "messageLabel": "Poruka",
+    "namePlaceholder": "Vaše ime",
+    "emailPlaceholder": "vasa@email.com",
+    "messagePlaceholder": "Recite mi o vašem projektu...",
+    "send": "Pošalji poruku",
+    "sending": "Slanje...",
+    "successTitle": "Poruka poslata!",
+    "successText": "Hvala što ste se javili. Odgovorim vam uskoro.",
+    "recaptchaAlert": "reCAPTCHA još nije dostupna",
+    "errorAlert": "Nešto je pošlo naopako."
+  },
+  "footer": {
+    "rights": "Sva prava zadržana."
+  }
+}

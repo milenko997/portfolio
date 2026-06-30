@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Let's Talk"
+  },
+  "hero": {
+    "status": "Open to opportunities",
+    "tagline": "Building digital experiences that matter",
+    "viewProjects": "View Projects",
+    "getInTouch": "Get In Touch"
+  },
+  "projects": {
+    "label": "Portfolio",
+    "title": "Featured Projects",
+    "viewAll": "View All Projects",
+    "liveDemo": "Live Demo"
+  },
+  "projectsPage": {
+    "label": "Portfolio",
+    "title": "All Projects",
+    "back": "Back"
+  },
+  "about": {
+    "label": "About Me",
+    "title": "Who I Am",
+    "bio": "Hi! My name is Milenko Ilić, I'm a passionate Full Stack Developer with 5+ years of experience crafting web applications. I specialize in building scalable, user-centric solutions using modern technologies. From concept to deployment, I bring ideas to life with clean code and thoughtful design.",
+    "location": "Novi Sad, Serbia",
+    "experience": "Experience",
+    "skills": "Skills & Technologies",
+    "jobs": [
+      {
+        "title": "Web Developer",
+        "company": "Omnistreak",
+        "period": "Sep 2025 - Present",
+        "description": "Maintaining and developing a large-scale custom WordPress webshop for a US-based client. Responsible for creating new pages, implementing custom features, and ensuring smooth performance and scalability across the site."
+      },
+      {
+        "title": "PHP Developer",
+        "company": "Codeplicity",
+        "period": "Dec 2023 - Aug 2025",
+        "description": "Developed new features for a large-scale PHP web app, focusing on performance, scalability, and clean architecture. Refactored legacy code, performed code reviews, and collaborated with a team of 10+ engineers."
+      },
+      {
+        "title": "Web Developer",
+        "company": "Decem Development",
+        "period": "Oct 2020 - May 2023",
+        "description": "Built 30+ responsive websites with strong SEO and cross-browser support. Customized WordPress themes/plugins and improved page load speeds by up to 25%."
+      },
+      {
+        "title": "Freelance Web Developer",
+        "company": "Worldwide",
+        "period": "Jun 2019 - Present",
+        "description": "Delivered custom WordPress and React solutions, including websites, landing pages, blogs, and eCommerce. Managed projects end-to-end and implemented custom themes, plugins, and Gutenberg solutions."
+      }
+    ],
+    "skillCategories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "devops": "DevOps",
+      "tools": "Tools"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's Work Together",
+    "text": "Have a project in mind or want to collaborate? I'd love to hear from you. Drop me a message and let's create something amazing together.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message Sent!",
+    "successText": "Thank you for reaching out. I'll get back to you soon.",
+    "recaptchaAlert": "reCAPTCHA not yet available",
+    "errorAlert": "Something went wrong."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

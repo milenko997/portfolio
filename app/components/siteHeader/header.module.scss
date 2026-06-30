@@ -97,3 +97,34 @@
 .navMobile .btn {
   margin-top: 8px;
 }
+
+.localeSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.localeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 4px 2px;
+  transition: color 0.3s ease;
+}
+
+.localeBtn:hover {
+  color: var(--text-primary);
+}
+
+.localeBtnActive {
+  color: var(--text-primary);
+}
+
+.localeDivider {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}

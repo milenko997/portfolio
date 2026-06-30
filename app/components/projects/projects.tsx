@@ -1,17 +1,19 @@
+import { useTranslations } from 'next-intl';
 import { projects } from '@/app/data/projects'
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import styles from './projects.module.scss';
 
 const Projects = () => {
+    const t = useTranslations('projects');
     const featured = projects.slice(0, 4);
 
     return (
         <section id="projects" className={styles.projects}>
             <div className="container">
             <div className={styles.sectionHeader}>
-                <span className={styles.sectionLabel}>Portfolio</span>
-                <h2 className={styles.sectionTitle}>Featured Projects</h2>
+                <span className={styles.sectionLabel}>{t('label')}</span>
+                <h2 className={styles.sectionTitle}>{t('title')}</h2>
             </div>
 
             <div className={styles.projectsGrid}>
@@ -59,7 +61,7 @@ const Projects = () => {
                             <polyline points="15 3 21 3 21 9" />
                             <line x1="10" x2="21" y1="14" y2="3" />
                             </svg>
-                            Live Demo
+                            {t('liveDemo')}
                         </a>
                         </div>
                     </div>
@@ -69,7 +71,7 @@ const Projects = () => {
 
             <div className={styles.viewAll}>
                 <Link href="/projects" className="btn btn-outline">
-                    View All Projects
+                    {t('viewAll')}
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
                     </svg>
