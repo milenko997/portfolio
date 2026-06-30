@@ -127,3 +127,9 @@
 .projectLink:hover {
   color: var(--text-primary);
 }
+
+.viewAll {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}

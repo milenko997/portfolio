@@ -1,8 +1,11 @@
 import { projects } from '@/app/data/projects'
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './projects.module.scss';
 
 const Projects = () => {
+    const featured = projects.slice(0, 4);
+
     return (
         <section id="projects" className={styles.projects}>
             <div className="container">
@@ -12,7 +15,7 @@ const Projects = () => {
             </div>
 
             <div className={styles.projectsGrid}>
-                {projects.map((project) => (
+                {featured.map((project) => (
                     <div key={project.id} className={styles.projectCard}>
                     <div className={styles.projectImage}>
                         <Image
@@ -62,6 +65,15 @@ const Projects = () => {
                     </div>
                     </div>
                 ))}
+            </div>
+
+            <div className={styles.viewAll}>
+                <Link href="/projects" className="btn btn-outline">
+                    View All Projects
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                    </svg>
+                </Link>
             </div>
             </div>
         </section>
