@@ -32,10 +32,16 @@
     "skills": "Veštine i tehnologije",
     "jobs": [
       {
+        "title": "Full Stack Developer",
+        "company": "Funteron Limited",
+        "period": "Jul 2026 – danas",
+        "description": "Radim na mobilnoj aplikaciji za sportsko klađenje, sa Flutter frontendom i backend servisima u Javi i Go-u. Razvijam nove funkcionalnosti i vodim računa da aplikacija bude brza i pouzdana za klađenje u realnom vremenu."
+      },
+      {
         "title": "Web Developer",
         "company": "Omnistreak",
-        "period": "Sep 2025 – danas",
-        "description": "Razvoj i održavanje velikog WordPress webshopa za klijenta iz SAD-a. Kreiram nove stranice, dodajem funkcionalnosti po meri i vodim računa o performansama i stabilnosti sajta."
+        "period": "Sep 2025 – Jul 2026",
+        "description": "Razvijao sam i održavao veliki WordPress webshop za klijenta iz SAD-a. Kreirao sam nove stranice, dodavao funkcionalnosti po meri i vodio računa o performansama i stabilnosti sajta."
       },
       {
         "title": "PHP Developer",

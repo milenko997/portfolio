@@ -32,10 +32,16 @@
     "skills": "Skills & Technologies",
     "jobs": [
       {
+        "title": "Full Stack Developer",
+        "company": "Funteron Limited",
+        "period": "Jul 2026 - Present",
+        "description": "Working on a sports betting mobile app with a Flutter frontend and Java and Go backend services. Building new features across the product and keeping the app fast and reliable for real-time betting."
+      },
+      {
         "title": "Web Developer",
         "company": "Omnistreak",
-        "period": "Sep 2025 - Present",
-        "description": "Maintaining and developing a large-scale custom WordPress webshop for a US-based client. Responsible for creating new pages, implementing custom features, and ensuring smooth performance and scalability across the site."
+        "period": "Sep 2025 - Jul 2026",
+        "description": "Maintained and developed a large-scale custom WordPress webshop for a US-based client. Created new pages, implemented custom features, and ensured smooth performance and scalability across the site."
       },
       {
         "title": "PHP Developer",
