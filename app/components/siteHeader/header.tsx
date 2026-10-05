@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { useRouter, usePathname } from '@/i18n/navigation';
+import { Link, useRouter, usePathname } from '@/i18n/navigation';
 import styles from './header.module.scss';
 
 const Header = () => {
@@ -43,9 +43,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.headerContent}`}>
-        <a href="/" className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           milenko<span>.</span>
-        </a>
+        </Link>
 
         <nav className={styles.navDesktop}>
           <a href="#home" className={`${styles.navLink} ${activeSection === 'home' ? styles.navLinkActive : ''}`}>{t('home')}</a>
