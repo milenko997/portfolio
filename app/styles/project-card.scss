@@ -1,0 +1,108 @@
+@use "./mixins.scss" as *;
+
+// Project card styles shared by the home section and the projects page
+@mixin project-card-styles {
+  .projectCard {
+    @include card;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .projectCard:hover {
+    border-color: var(--border-medium);
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+  }
+
+  .projectImage {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    background: var(--bg-subtle);
+  }
+
+  .projectImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .projectCard:hover .projectImage img {
+    transform: scale(1.04);
+  }
+
+  .projectContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 14px 12px;
+  }
+
+  .projectTitle {
+    font-size: 1.1875rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
+  .projectTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-light);
+    border-radius: 9999px;
+  }
+
+  .projectLinks {
+    display: flex;
+    margin-top: auto;
+    padding-top: 4px;
+  }
+
+  .projectLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    // Stretch the link so the whole card is clickable
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+    }
+
+    svg {
+      transition: transform 0.2s ease;
+    }
+  }
+
+  .projectCard:hover .projectLink {
+    color: var(--accent);
+  }
+
+  .projectCard:hover .projectLink svg {
+    transform: translate(2px, -2px);
+  }
+}

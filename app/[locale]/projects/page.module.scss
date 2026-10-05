@@ -1,19 +1,37 @@
 @use "../../styles/variables.scss" as *;
 @use "../../styles/mixins.scss" as *;
+@use "../../styles/project-card.scss" as *;
 
 .projectsPage {
-  padding: 120px 0 96px;
+  position: relative;
+  padding: 136px 0 120px;
   min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    width: min(1000px, 140vw);
+    aspect-ratio: 2 / 1;
+    transform: translateX(-50%);
+    background: radial-gradient(closest-side, rgba(109, 110, 240, 0.18), transparent);
+    filter: blur(40px);
+    z-index: -1;
+    pointer-events: none;
+  }
 }
 
 @include respond(sm) {
   .projectsPage {
-    padding: 100px 0 56px;
+    padding: 104px 0 72px;
   }
 }
 
 .pageHeader {
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 
 .backLink {
@@ -24,35 +42,40 @@
   font-weight: 500;
   color: var(--text-secondary);
   text-decoration: none;
-  margin-bottom: 24px;
-  transition: color 0.3s ease;
+  margin-bottom: 32px;
+  padding: 6px 14px 6px 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 9999px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  svg {
+    transition: transform 0.2s ease;
+  }
 }
 
 .backLink:hover {
   color: var(--text-primary);
+  border-color: var(--border-medium);
+
+  svg {
+    transform: translateX(-3px);
+  }
 }
 
 .sectionLabel {
-  display: block;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 8px;
+  @include section-label;
+  display: flex;
 }
 
 .sectionTitle {
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1;
+  @include section-title;
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
 }
 
 .projectsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 24px;
 }
 
 @media (min-width: 768px) {
@@ -61,85 +84,10 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1100px) {
   .projectsGrid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.projectCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: border-color 0.3s ease;
-}
-
-.projectCard:hover {
-  border-color: rgba(217, 251, 6, 0.5);
-}
-
-.projectImage {
-  aspect-ratio: 16/10;
-  overflow: hidden;
-}
-
-.projectImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.projectCard:hover .projectImage img {
-  transform: scale(1.05);
-}
-
-.projectContent {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.projectTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.projectTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tag {
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 6px 12px;
-  background: var(--border-medium);
-  color: var(--text-primary);
-  border-radius: 9999px;
-}
-
-.projectLinks {
-  display: flex;
-  gap: 16px;
-  padding-top: 8px;
-}
-
-.projectLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.projectLink:hover {
-  color: var(--text-primary);
-}
+@include project-card-styles;

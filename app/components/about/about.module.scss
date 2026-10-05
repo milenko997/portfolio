@@ -2,12 +2,13 @@
 @use "../../styles/mixins.scss" as *;
 
 .about {
-  padding: 96px 0;
+  padding: 120px 0;
+  border-top: 1px solid var(--border-light);
 }
 
 @include respond(sm) {
   .about {
-    padding: 56px 0;
+    padding: 72px 0;
   }
 }
 
@@ -19,108 +20,151 @@
 
 @media (min-width: 1024px) {
   .aboutGrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: start;
   }
 }
 
 .sectionLabel {
-  display: block;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 8px;
+  @include section-label;
 }
 
 .sectionTitle {
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1;
+  @include section-title;
 }
 
 .aboutContent {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
 }
 
 .aboutBio {
   font-size: 1.125rem;
   color: var(--text-light);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .location {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  width: fit-content;
+  font-size: 0.875rem;
   color: var(--text-secondary);
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: var(--accent);
+  }
 }
 
 .experience {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
+  padding-top: 16px;
 }
 
-.experienceTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
+.experienceTitle,
+.skillsTitle {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .experienceList {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+
+  // Timeline rail
+  &::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 5px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--border-medium), var(--border-light) 85%, transparent);
+  }
 }
 
 .experienceItem {
-  border-left: 2px solid var(--border-medium);
-  padding-left: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  transition: border-color 0.3s ease;
-}
+  position: relative;
+  padding: 0 0 32px 36px;
 
-.experienceItem:hover {
-  border-color: var(--text-primary);
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  // Timeline dot
+  &::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg-page);
+    border: 1px solid var(--border-medium);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  &:first-child::before {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+
+  &:hover::before {
+    border-color: var(--accent);
+  }
 }
 
 .experienceItem h4 {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
-  margin-bottom: 4px;
 }
 
 .experienceMeta {
+  margin-top: 2px;
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: var(--accent);
 }
 
 .experienceDesc {
-  font-size: 0.875rem;
+  margin-top: 10px;
+  font-size: 0.9375rem;
   color: var(--text-light);
-  margin-top: 4px;
+  line-height: 1.7;
 }
 
 .skillsSection {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
-.skillsTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
+@media (min-width: 1024px) {
+  .skillsSection {
+    position: sticky;
+    top: 104px;
+  }
 }
 
 .skillsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 16px;
 }
 
 @media (min-width: 640px) {
@@ -130,28 +174,38 @@
 }
 
 .skillCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 24px;
+  @include card;
+  padding: 22px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.skillCard:hover {
+  border-color: var(--border-medium);
+  background: var(--bg-card-hover);
 }
 
 .skillHeader {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .skillIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--border-medium);
-  border-radius: 8px;
-  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(139, 140, 248, 0.2);
+  border-radius: 10px;
+  color: var(--accent);
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .skillHeader h4 {
@@ -163,14 +217,15 @@
 .skillTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .skillTags span {
   font-size: 0.75rem;
   font-weight: 500;
-  padding: 6px 12px;
-  background: var(--bg-page);
+  padding: 5px 11px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-light);
   color: var(--text-light);
   border-radius: 9999px;
 }

@@ -12,6 +12,7 @@ const Header = () => {
   const pathname = usePathname();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMobileMenu = () => setIsMobileOpen((prev) => !prev);
   const closeMobileMenu = () => setIsMobileOpen(false);
@@ -25,6 +26,7 @@ const Header = () => {
 
     function highlightNavOnScroll() {
       const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 8);
       sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top + window.scrollY - 100;
         const sectionHeight = section.offsetHeight;
@@ -40,8 +42,19 @@ const Header = () => {
     return () => window.removeEventListener('scroll', highlightNavOnScroll);
   }, []);
 
+  useEffect(() => {
+    // The mobile menu is hidden on desktop, so close it when the viewport grows past the breakpoint
+    const desktop = window.matchMedia('(min-width: 900px)');
+    const closeOnDesktop = (e: MediaQueryListEvent) => {
+      if (e.matches) setIsMobileOpen(false);
+    };
+
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => desktop.removeEventListener('change', closeOnDesktop);
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled || isMobileOpen ? styles.headerScrolled : ''} ${isMobileOpen ? styles.headerOpen : ''}`}>
       <div className={`container ${styles.headerContent}`}>
         <Link href="/" className={styles.logo}>
           milenko<span>.</span>
@@ -60,7 +73,6 @@ const Header = () => {
             >
               EN
             </button>
-            <span className={styles.localeDivider}>|</span>
             <button
               className={`${styles.localeBtn} ${locale === 'sr' ? styles.localeBtnActive : ''}`}
               onClick={() => switchLocale('sr')}
@@ -69,7 +81,7 @@ const Header = () => {
             </button>
           </div>
 
-          <a href="#contact" className="btn btn-primary">{t('cta')}</a>
+          <a href="#contact" className={`btn btn-primary ${styles.cta}`}>{t('cta')}</a>
         </nav>
 
         <button className={styles.mobileMenuBtn} onClick={toggleMobileMenu} aria-label="Toggle menu">
@@ -89,7 +101,6 @@ const Header = () => {
         <a href="#contact" className={styles.navLink} onClick={closeMobileMenu}>{t('contact')}</a>
         <div className={styles.localeSwitcher}>
           <button className={`${styles.localeBtn} ${locale === 'en' ? styles.localeBtnActive : ''}`} onClick={() => { switchLocale('en'); closeMobileMenu(); }}>EN</button>
-          <span className={styles.localeDivider}>|</span>
           <button className={`${styles.localeBtn} ${locale === 'sr' ? styles.localeBtnActive : ''}`} onClick={() => { switchLocale('sr'); closeMobileMenu(); }}>SR</button>
         </div>
         <a href="#contact" className="btn btn-primary" onClick={closeMobileMenu}>{t('cta')}</a>

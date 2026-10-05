@@ -6,6 +6,10 @@ const Hero = () => {
 
     return (
         <section id="home" className={styles.hero}>
+            <div className={styles.heroBackdrop} aria-hidden="true">
+                <div className={styles.heroPattern}></div>
+                <div className={styles.heroGlow}></div>
+            </div>
             <div className="container">
             <div className={styles.heroGrid}>
                 <div className={styles.heroContent}>
@@ -14,8 +18,8 @@ const Hero = () => {
                     {t('status')}
                 </span>
                 <h1 className={styles.heroTitle}>
-                    Milenko Ilić<br />
-                    Full Stack Developer
+                    <span>Milenko Ilić</span>
+                    <span className={styles.heroRole}>Full Stack Developer</span>
                 </h1>
                 <p className={styles.heroTagline}>{t('tagline')}</p>
 
@@ -40,10 +44,24 @@ const Hero = () => {
                 </div>
                 </div>
 
-                <div className={styles.heroVisual}>
-                    <div className={styles.heroCircleBg}></div>
-                    <div className={styles.heroCircle}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="hero-icon"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                <div className={styles.heroVisual} aria-hidden="true">
+                    <div className={styles.codeCard}>
+                        <div className={styles.codeCardBar}>
+                            <span></span><span></span><span></span>
+                            <p>developer.ts</p>
+                        </div>
+                        <pre className={styles.codeCardBody}>
+<span className={styles.tkKeyword}>const</span> <span className={styles.tkVar}>developer</span> = {'{'}{'\n'}
+{'  '}name: <span className={styles.tkString}>&apos;Milenko Ilić&apos;</span>,{'\n'}
+{'  '}role: <span className={styles.tkString}>&apos;Full Stack Developer&apos;</span>,{'\n'}
+{'  '}location: <span className={styles.tkString}>&apos;Novi Sad, Serbia&apos;</span>,{'\n'}
+{'  '}stack: [{'\n'}
+{'    '}<span className={styles.tkString}>&apos;React&apos;</span>, <span className={styles.tkString}>&apos;Next.js&apos;</span>,{'\n'}
+{'    '}<span className={styles.tkString}>&apos;Laravel&apos;</span>, <span className={styles.tkString}>&apos;WordPress&apos;</span>,{'\n'}
+{'  '}],{'\n'}
+{'  '}available: <span className={styles.tkKeyword}>true</span>,{'\n'}
+{'}'};
+                        </pre>
                     </div>
                 </div>
             </div>

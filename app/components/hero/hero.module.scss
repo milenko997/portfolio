@@ -2,128 +2,172 @@
 @use "../../styles/mixins.scss" as *;
 
 .hero {
+  position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 72px;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
+.heroBackdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding: 0 40px;
-  }
+.heroPattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 30%, transparent 100%);
+}
+
+.heroGlow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: min(1100px, 140vw);
+  aspect-ratio: 2 / 1;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(closest-side at 35% 50%, rgba(109, 110, 240, 0.28), transparent),
+    radial-gradient(closest-side at 70% 45%, rgba(103, 198, 245, 0.14), transparent);
+  filter: blur(40px);
 }
 
 .heroGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 48px;
+  gap: 64px;
   align-items: center;
-  padding: 60px 0;
+  padding: 56px 0 32px;
 }
 
 @media (min-width: 1024px) {
   .heroGrid {
-    grid-template-columns: 1fr 1fr;
-    padding: 80px 0;
+    grid-template-columns: 1.15fr 1fr;
+    padding: 80px 0 40px;
   }
 }
 
 .heroContent {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: flex-start;
+  gap: 28px;
 }
 
 .statusBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
+  gap: 10px;
+  padding: 6px 14px 6px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-medium);
+  border-radius: 9999px;
+  color: var(--text-light);
+  font-size: 0.8125rem;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 .statusDot {
+  position: relative;
   width: 8px;
   height: 8px;
-  background: var(--text-primary);
+  background: var(--success);
   border-radius: 50%;
-  animation: pulse 2s infinite;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--success);
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
 }
 
 .heroTitle {
-  font-size: 5rem;
-  font-weight: 900;
-  line-height: 1;
-  text-transform: uppercase;
-
-  @include respond (lg) {
-    font-size: 4rem;
-  }
-
-  @include respond (md) {
-    font-size: 3rem;
-  }
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  color: var(--text-primary);
 }
 
-.heroTitle span {
-  display: block;
-  margin-bottom: 8px;
+.heroRole {
+  background: var(--accent-gradient);
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 0.08em;
 }
 
 .heroTagline {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--text-light);
-  font-weight: 500;
-  max-width: 480px;
+  max-width: 460px;
+  line-height: 1.6;
 }
 
 @media (min-width: 768px) {
   .heroTagline {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
 .heroButtons {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
+  padding-top: 4px;
 }
 
 .socialLinks {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding-top: 16px;
+  gap: 8px;
 }
 
 .socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   color: var(--text-secondary);
-  transition: color 0.3s ease;
+  border-radius: 9999px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .socialLink:hover {
   color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .heroVisual {
   display: none;
   justify-content: center;
-  position: relative;
 }
 
 @media (min-width: 1024px) {
@@ -132,44 +176,88 @@
   }
 }
 
-.heroCircleBg {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  background: var(--border-medium);
-  border-radius: 50%;
-  top: -16px;
-  left: calc(50% - 176px);
+.codeCard {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background: linear-gradient(180deg, rgba(24, 24, 29, 0.9), rgba(16, 16, 20, 0.9));
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 30px 80px -20px rgba(0, 0, 0, 0.8),
+    0 0 120px -40px rgba(109, 110, 240, 0.5);
+  backdrop-filter: blur(12px);
+  transform: perspective(1400px) rotateY(-8deg) rotateX(4deg);
+  transition: transform 0.6s ease;
+
+  &:hover {
+    transform: perspective(1400px) rotateY(0) rotateX(0);
+  }
 }
 
-.heroCircle {
-  position: relative;
-  width: 320px;
-  height: 320px;
-  background: var(--bg-card);
-  border-radius: 50%;
-  border: 4px solid var(--text-primary);
+.codeCardBar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  gap: 8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-light);
+
+  span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #2a2a31;
+  }
+
+  p {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 46px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
 }
 
-.heroIcon {
-  opacity: 0.2;
-  color: var(--text-primary);
+.codeCardBody {
+  padding: 24px 24px 28px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.85;
+  color: var(--text-light);
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.tkKeyword {
+  color: #c4a7ff;
+}
+
+.tkVar {
+  color: #8fd3ff;
+}
+
+.tkString {
+  color: #a5e3b7;
 }
 
 .scrollIndicator {
   display: flex;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: 32px;
 }
 
 .scrollIndicator a {
+  display: flex;
   color: var(--text-secondary);
-  transition: color 0.3s ease;
-  animation: bounce 2s infinite;
+  transition: color 0.2s ease;
+  animation: bounce 2.4s infinite;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .scrollIndicator a:hover {
@@ -178,6 +266,16 @@
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+@include respond(sm) {
+  .hero {
+    min-height: auto;
+  }
+
+  .heroGrid {
+    padding: 48px 0 16px;
+  }
 }
