@@ -9,6 +9,7 @@ import popgor from '@/assets/images/popgor.png';
 import transporteri from '@/assets/images/transporteri.png';
 import decem from '@/assets/images/decem.png';
 import barkop from '@/assets/images/barkop.png';
+import nenadprevoz from '@/assets/images/nenadprevoz.png';
 
 export type Project = {
   id: number;
@@ -88,5 +89,12 @@ export const projects: Project[] = [
     title: 'BarKop',
     tech: ['NEXT.js', 'React', 'SCSS'],
     link: 'https://barkop.rs/',
+  },
+  {
+    id: 11,
+    img: nenadprevoz,
+    title: 'Nenad Prevoz',
+    tech: ['NEXT.js', 'React', 'SCSS'],
+    link: 'https://nenadprevoz.rs/',
   },
 ];
