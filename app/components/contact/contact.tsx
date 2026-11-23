@@ -90,17 +90,17 @@ const ContactForm = () => {
               <form onSubmit={handleSubmit} className={styles.contactForm}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name">{t('nameLabel')}</label>
-                  <input type="text" name="name" id="name" value={form.name} onChange={handleChange} placeholder={t('namePlaceholder')} autoComplete="false" required />
+                  <input type="text" name="name" id="name" maxLength={100} value={form.name} onChange={handleChange} placeholder={t('namePlaceholder')} autoComplete="false" required />
                 </div>
 
                 <div className={styles.formGroup}>
                   <label htmlFor="email">{t('emailLabel')}</label>
-                  <input type="email" name="email" id="email" value={form.email} onChange={handleChange} placeholder={t('emailPlaceholder')} autoComplete="false" required />
+                  <input type="email" name="email" id="email" maxLength={254} value={form.email} onChange={handleChange} placeholder={t('emailPlaceholder')} autoComplete="false" required />
                 </div>
 
                 <div className={styles.formGroup}>
                   <label htmlFor="message">{t('messageLabel')}</label>
-                  <textarea name="message" id="message" rows={5} value={form.message} onChange={handleChange} placeholder={t('messagePlaceholder')} autoComplete="false" required />
+                  <textarea name="message" id="message" rows={5} maxLength={5000} value={form.message} onChange={handleChange} placeholder={t('messagePlaceholder')} autoComplete="false" required />
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-lg btn-full" disabled={loading}>
