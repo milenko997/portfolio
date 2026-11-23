@@ -16,7 +16,12 @@
     "projects": "Projects",
     "about": "About",
     "contact": "Contact",
-    "cta": "Let's Talk"
+    "cta": "Let's Talk",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation"
   },
   "hero": {
     "status": "Open to opportunities",
@@ -229,8 +234,8 @@
     "sending": "Sending...",
     "successTitle": "Message Sent!",
     "successText": "Thank you for reaching out. I'll get back to you soon.",
-    "recaptchaAlert": "reCAPTCHA not yet available",
-    "errorAlert": "Something went wrong."
+    "recaptchaAlert": "The spam check hasn't loaded yet. Please wait a moment and try again.",
+    "errorAlert": "Your message couldn't be sent. Please try again, or email me at milenko.ilic997@gmail.com."
   },
   "footer": {
     "rights": "All rights reserved.",
@@ -241,5 +246,11 @@
     "text": "I'd like to use Google Analytics cookies to see how visitors use this site. They are only set if you allow them.",
     "accept": "Allow",
     "decline": "Decline"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you're looking for doesn't exist or has been moved.",
+    "home": "Back to home",
+    "projects": "View projects"
   }
 }

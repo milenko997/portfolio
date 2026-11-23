@@ -1,0 +1,64 @@
+@use "../styles/mixins.scss" as *;
+
+.notFound {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 90px);
+  padding: 136px 0 96px;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    width: min(1000px, 140vw);
+    aspect-ratio: 2 / 1;
+    transform: translateX(-50%);
+    background: radial-gradient(closest-side, rgba(109, 110, 240, 0.18), transparent);
+    filter: blur(40px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  :global(.container) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.code {
+  font-size: clamp(6rem, 22vw, 11rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.title {
+  @include section-title;
+  margin-top: 16px;
+}
+
+.text {
+  max-width: 480px;
+  margin-top: 16px;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}

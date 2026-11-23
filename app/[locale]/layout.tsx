@@ -1,23 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { fontClassName } from '@/app/fonts';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { SITE_URL, localizedUrl, ogLocale, pageAlternates } from '@/i18n/metadata';
 import Analytics from '@/app/components/analytics';
+import Header from '@/app/components/siteHeader';
+import Footer from '@/app/components/siteFooter';
 import '../globals.css';
 import '../globals.scss';
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 type MetadataProps = { params: Promise<{ locale: string }> };
 
@@ -60,6 +52,9 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
+  // Paths the middleware skips (e.g. "/sr/missing.png") carry no locale header, so set it from params.
+  setRequestLocale(locale);
+
   const messages = await getMessages();
 
   return (
@@ -82,9 +77,11 @@ export default async function LocaleLayout({ children, params }: Props) {
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={fontClassName}>
         <NextIntlClientProvider messages={messages}>
+          <Header />
           {children}
+          <Footer />
           <Analytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         </NextIntlClientProvider>
       </body>

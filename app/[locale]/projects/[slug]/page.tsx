@@ -4,8 +4,6 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { localizedUrl, ogLocale, pageAlternates } from '@/i18n/metadata';
-import Header from '@/app/components/siteHeader';
-import Footer from '@/app/components/siteFooter';
 import { getProject, type Project } from '@/app/data/projects';
 import styles from './page.module.scss';
 
@@ -52,8 +50,6 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <main className="main">
-      <Header />
-
       <section className={styles.projectPage}>
         <div className="container">
           <Link href="/projects" className={styles.backLink}>
@@ -127,8 +123,6 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

@@ -16,7 +16,12 @@
     "projects": "Projekti",
     "about": "O meni",
     "contact": "Kontakt",
-    "cta": "Kontaktiraj me"
+    "cta": "Kontaktiraj me",
+    "openMenu": "Otvori meni",
+    "closeMenu": "Zatvori meni",
+    "language": "Jezik",
+    "mainNav": "Glavna navigacija",
+    "mobileNav": "Mobilna navigacija"
   },
   "hero": {
     "status": "Dostupan za projekte",
@@ -229,8 +234,8 @@
     "sending": "Šaljem...",
     "successTitle": "Poruka poslata!",
     "successText": "Hvala na poruci! Javiću se uskoro.",
-    "recaptchaAlert": "reCAPTCHA još nije spremna",
-    "errorAlert": "Došlo je do greške. Pokušaj ponovo."
+    "recaptchaAlert": "Zaštita od spama se još nije učitala. Sačekaj trenutak i pokušaj ponovo.",
+    "errorAlert": "Poruka nije poslata. Pokušaj ponovo ili mi piši na milenko.ilic997@gmail.com."
   },
   "footer": {
     "rights": "Sva prava zadržana.",
@@ -238,8 +243,14 @@
   },
   "cookies": {
     "label": "Pristanak na kolačiće",
-    "text": "Želeo bih da koristim Google Analytics kolačiće da vidim kako posetioci koriste sajt. Postavljaju se samo ako ih dozvolite.",
+    "text": "Želeo bih da koristim Google Analytics kolačiće da vidim kako posetioci koriste sajt. Postavljaju se samo ako ih dozvoliš.",
     "accept": "Dozvoli",
     "decline": "Odbij"
+  },
+  "notFound": {
+    "title": "Stranica nije pronađena",
+    "text": "Stranica koju tražiš ne postoji ili je premeštena.",
+    "home": "Nazad na početnu",
+    "projects": "Pogledaj projekte"
   }
 }

@@ -9,6 +9,11 @@ import styles from './header.module.scss';
 // work from other pages too, e.g. /projects -> home page, scrolled to About.
 const sections = ['home', 'projects', 'about', 'contact'] as const;
 
+const locales = [
+  { code: 'en', label: 'EN', name: 'English' },
+  { code: 'sr', label: 'SR', name: 'Srpski' },
+] as const;
+
 const Header = () => {
   const t = useTranslations('nav');
   const locale = useLocale();
@@ -64,7 +69,7 @@ const Header = () => {
           milenko<span>.</span>
         </Link>
 
-        <nav className={styles.navDesktop}>
+        <nav className={styles.navDesktop} aria-label={t('mainNav')}>
           {sections.map((section) => (
             <Link
               key={section}
@@ -75,25 +80,33 @@ const Header = () => {
             </Link>
           ))}
 
-          <div className={styles.localeSwitcher}>
-            <button
-              className={`${styles.localeBtn} ${locale === 'en' ? styles.localeBtnActive : ''}`}
-              onClick={() => switchLocale('en')}
-            >
-              EN
-            </button>
-            <button
-              className={`${styles.localeBtn} ${locale === 'sr' ? styles.localeBtnActive : ''}`}
-              onClick={() => switchLocale('sr')}
-            >
-              SR
-            </button>
+          <div className={styles.localeSwitcher} role="group" aria-label={t('language')}>
+            {locales.map((item) => (
+              <button
+                key={item.code}
+                type="button"
+                lang={item.code}
+                aria-label={item.name}
+                aria-pressed={locale === item.code}
+                className={`${styles.localeBtn} ${locale === item.code ? styles.localeBtnActive : ''}`}
+                onClick={() => switchLocale(item.code)}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
           <Link href="/#contact" className={`btn btn-primary ${styles.cta}`}>{t('cta')}</Link>
         </nav>
 
-        <button className={styles.mobileMenuBtn} onClick={toggleMobileMenu} aria-label="Toggle menu">
+        <button
+          type="button"
+          className={styles.mobileMenuBtn}
+          onClick={toggleMobileMenu}
+          aria-label={isMobileOpen ? t('closeMenu') : t('openMenu')}
+          aria-expanded={isMobileOpen}
+          aria-controls="mobile-menu"
+        >
           <svg className={`icon-menu ${isMobileOpen ? 'hidden' : ''}`} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" />
           </svg>
@@ -103,15 +116,26 @@ const Header = () => {
         </button>
       </div>
 
-      <nav className={`${styles.navMobile} ${isMobileOpen ? '' : 'hidden'}`}>
+      <nav id="mobile-menu" className={`${styles.navMobile} ${isMobileOpen ? '' : 'hidden'}`} aria-label={t('mobileNav')}>
         {sections.map((section) => (
           <Link key={section} href={`/#${section}`} className={styles.navLink} onClick={closeMobileMenu}>
             {t(section)}
           </Link>
         ))}
-        <div className={styles.localeSwitcher}>
-          <button className={`${styles.localeBtn} ${locale === 'en' ? styles.localeBtnActive : ''}`} onClick={() => { switchLocale('en'); closeMobileMenu(); }}>EN</button>
-          <button className={`${styles.localeBtn} ${locale === 'sr' ? styles.localeBtnActive : ''}`} onClick={() => { switchLocale('sr'); closeMobileMenu(); }}>SR</button>
+        <div className={styles.localeSwitcher} role="group" aria-label={t('language')}>
+          {locales.map((item) => (
+            <button
+              key={item.code}
+              type="button"
+              lang={item.code}
+              aria-label={item.name}
+              aria-pressed={locale === item.code}
+              className={`${styles.localeBtn} ${locale === item.code ? styles.localeBtnActive : ''}`}
+              onClick={() => { switchLocale(item.code); closeMobileMenu(); }}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
         <Link href="/#contact" className="btn btn-primary" onClick={closeMobileMenu}>{t('cta')}</Link>
       </nav>

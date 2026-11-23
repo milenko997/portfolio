@@ -3,8 +3,6 @@ import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { SITE_URL, localizedUrl, ogLocale, pageAlternates } from '@/i18n/metadata';
-import Header from '@/app/components/siteHeader';
-import Footer from '@/app/components/siteFooter';
 import ProjectsGrid from './projectsGrid';
 import styles from './page.module.scss';
 
@@ -41,8 +39,6 @@ export default function ProjectsPage() {
 
   return (
     <main className="main">
-      <Header />
-
       <section className={styles.projectsPage}>
         <div className="container">
           <div className={styles.pageHeader}>
@@ -59,8 +55,6 @@ export default function ProjectsPage() {
           <ProjectsGrid />
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }
