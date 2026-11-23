@@ -5,6 +5,10 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link, useRouter, usePathname } from '@/i18n/navigation';
 import styles from './header.module.scss';
 
+// Sections live on the home page. Linking to "/#section" (not just "#section") makes the links
+// work from other pages too, e.g. /projects -> home page, scrolled to About.
+const sections = ['home', 'projects', 'about', 'contact'] as const;
+
 const Header = () => {
   const t = useTranslations('nav');
   const locale = useLocale();
@@ -22,12 +26,12 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const sections = document.querySelectorAll<HTMLElement>('section[id]');
+    const sectionEls = document.querySelectorAll<HTMLElement>('section[id]');
 
     function highlightNavOnScroll() {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 8);
-      sections.forEach((section) => {
+      sectionEls.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top + window.scrollY - 100;
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id');
@@ -61,10 +65,15 @@ const Header = () => {
         </Link>
 
         <nav className={styles.navDesktop}>
-          <a href="#home" className={`${styles.navLink} ${activeSection === 'home' ? styles.navLinkActive : ''}`}>{t('home')}</a>
-          <a href="#projects" className={`${styles.navLink} ${activeSection === 'projects' ? styles.navLinkActive : ''}`}>{t('projects')}</a>
-          <a href="#about" className={`${styles.navLink} ${activeSection === 'about' ? styles.navLinkActive : ''}`}>{t('about')}</a>
-          <a href="#contact" className={`${styles.navLink} ${activeSection === 'contact' ? styles.navLinkActive : ''}`}>{t('contact')}</a>
+          {sections.map((section) => (
+            <Link
+              key={section}
+              href={`/#${section}`}
+              className={`${styles.navLink} ${activeSection === section ? styles.navLinkActive : ''}`}
+            >
+              {t(section)}
+            </Link>
+          ))}
 
           <div className={styles.localeSwitcher}>
             <button
@@ -81,7 +90,7 @@ const Header = () => {
             </button>
           </div>
 
-          <a href="#contact" className={`btn btn-primary ${styles.cta}`}>{t('cta')}</a>
+          <Link href="/#contact" className={`btn btn-primary ${styles.cta}`}>{t('cta')}</Link>
         </nav>
 
         <button className={styles.mobileMenuBtn} onClick={toggleMobileMenu} aria-label="Toggle menu">
@@ -95,15 +104,16 @@ const Header = () => {
       </div>
 
       <nav className={`${styles.navMobile} ${isMobileOpen ? '' : 'hidden'}`}>
-        <a href="#home" className={styles.navLink} onClick={closeMobileMenu}>{t('home')}</a>
-        <a href="#projects" className={styles.navLink} onClick={closeMobileMenu}>{t('projects')}</a>
-        <a href="#about" className={styles.navLink} onClick={closeMobileMenu}>{t('about')}</a>
-        <a href="#contact" className={styles.navLink} onClick={closeMobileMenu}>{t('contact')}</a>
+        {sections.map((section) => (
+          <Link key={section} href={`/#${section}`} className={styles.navLink} onClick={closeMobileMenu}>
+            {t(section)}
+          </Link>
+        ))}
         <div className={styles.localeSwitcher}>
           <button className={`${styles.localeBtn} ${locale === 'en' ? styles.localeBtnActive : ''}`} onClick={() => { switchLocale('en'); closeMobileMenu(); }}>EN</button>
           <button className={`${styles.localeBtn} ${locale === 'sr' ? styles.localeBtnActive : ''}`} onClick={() => { switchLocale('sr'); closeMobileMenu(); }}>SR</button>
         </div>
-        <a href="#contact" className="btn btn-primary" onClick={closeMobileMenu}>{t('cta')}</a>
+        <Link href="/#contact" className="btn btn-primary" onClick={closeMobileMenu}>{t('cta')}</Link>
       </nav>
     </header>
   );

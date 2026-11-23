@@ -229,3 +229,20 @@
   color: var(--text-light);
   border-radius: 9999px;
 }
+
+.aboutStudio {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--text-primary);
+    }
+  }
+}

@@ -21,12 +21,144 @@
   "projectsPage": {
     "label": "Portfolio",
     "title": "Svi projekti",
-    "back": "Nazad"
+    "back": "Nazad",
+    "all": "Svi",
+    "filterLabel": "Filtriraj projekte po kategoriji"
+  },
+  "categories": {
+    "webApp": "Web aplikacija",
+    "mobileApp": "Mobilna aplikacija",
+    "website": "Sajt",
+    "ecommerce": "Online prodavnica"
+  },
+  "projectItems": {
+    "itv-odds-finder": {
+      "summary": "Aplikacija za poređenje kvota za iOS, Android i web. Radim i na Flutter aplikaciji i na Java i Go servisima iza nje.",
+      "industry": "Sportsko klađenje",
+      "role": "Full Stack Developer",
+      "challenge": "Kvote se stalno menjaju, a korisnici očekuju da na prvi pogled uporede kvote svih kladionica za fudbalsku utakmicu, konjičku trku ili teniski meč i odmah uplate opkladu. Aplikacija mora da ostane brza i pouzdana kada se odluke donose u realnom vremenu.",
+      "solution": [
+        "Razvijam nove funkcionalnosti u celom proizvodu, i u Flutter aplikaciji i u Java i Go backend servisima koji je pokreću.",
+        "Veliki deo posla je da aplikacija ostane brza i pouzdana za klađenje u realnom vremenu, tako da kvote, tiket i prelazak na kladionicu deluju trenutno."
+      ]
+    },
+    "nourishmates": {
+      "summary": "Platforma za planiranje obroka i praćenje ishrane, sa Laravel REST API-jem i reaktivnim Svelte frontendom.",
+      "industry": "Zdravlje i ishrana",
+      "role": "Full Stack Developer",
+      "challenge": "Praćenje ishrane ima smisla samo ako unos obroka traje par sekundi. Proizvodu su trebali planovi obroka, dnevnik ishrane, praćenje nutrijenata i biblioteka recepata koju gradi zajednica, a da nijednog trenutka ne deluje kao tabela.",
+      "solution": [
+        "Osmislio sam Laravel REST API i MySQL model podataka za korisnike, obroke, recepte i nutrijente, i na njima napravio Svelte frontend.",
+        "Odvojen API i frontend omogućili su da interfejs ostane brz i reaktivan, sa smirenim dizajnom zbog kog svakodnevno praćenje ne predstavlja napor."
+      ]
+    },
+    "transporteri": {
+      "summary": "Logistička platforma koja povezuje klijente sa transportnim firmama. Laravel backend, React frontend, PHPUnit testovi.",
+      "industry": "Logistika",
+      "role": "Full Stack Developer",
+      "challenge": "Dve vrste korisnika, klijenti i transportne firme, trebalo je da imaju svoje naloge, oglase i zahteve, pri čemu svaka strana vidi samo ono što joj pripada.",
+      "solution": [
+        "Napravio sam Laravel i MySQL backend sa autentifikacijom i pristupom profilima, oglasima i zahtevima po nalozima, a ključne tokove pokrio PHPUnit testovima.",
+        "React frontend je prilagođen brzom, svakodnevnom korišćenju, pa objavljivanje ili odgovaranje na zahtev za prevoz traje svega nekoliko koraka."
+      ]
+    },
+    "strn": {
+      "summary": "Editorijalni sajt za kolektiv koji se bavi brendiranjem i web razvojem, napravljen u Next.js-u i Tailwind CSS-u, sa sadržajem preko API-ja.",
+      "industry": "Kreativna agencija",
+      "role": "Web Developer",
+      "challenge": "Kolektiv je želeo sajt koji deluje odvažno i smireno u isto vreme, sa krupnom tipografijom, snažnim vizualima i glatkim interakcijama, a da pritom ne žrtvuje brzinu učitavanja.",
+      "solution": [
+        "Napravio sam ga u Next.js-u, React-u i Tailwind CSS-u, a sadržaj portfolija se učitava preko API integracija, tako da tim ažurira radove bez diranja koda."
+      ]
+    },
+    "caffe-milion-xl": {
+      "summary": "Sajt za kafić i lounge bar, napravljen u Next.js-u sa laganim SCSS dizajn sistemom.",
+      "industry": "Ugostiteljstvo",
+      "role": "Web Developer",
+      "challenge": "Većina gostiju lokal traži preko telefona, pa je sajt trebalo da prenese njegovu atmosferu, sa galerijom, događajima i bilijar zonom, i da se pritom brzo učitava na mobilnom.",
+      "solution": [
+        "Napravio sam ga u Next.js-u i React-u sa malim SCSS dizajn sistemom, uz lagane stranice kako bi se sadržaj pun fotografija brzo učitavao na telefonima."
+      ]
+    },
+    "popgor": {
+      "summary": "Sajt za dobavljača građevinskog materijala, napravljen u Next.js-u zbog brzine i vidljivosti u pretrazi.",
+      "industry": "Građevinski materijal",
+      "role": "Web Developer",
+      "challenge": "Kupci traže građevinski materijal na internetu, pa je sajt trebalo dobro da se rangira i da posete pretvara u upite, uz jasan prikaz širokog asortimana, referenci i partnera.",
+      "solution": [
+        "Napravio sam ga u Next.js-u, React-u i SCSS-u, sa stranicama renderovanim na serveru i urednim metapodacima za pretragu, i rasporedom koji posetioce vodi ka slanju upita."
+      ]
+    },
+    "mpka": {
+      "summary": "Sajt za službu kućne nege u Karlsrueu, sa WordPress temom po meri koju tim sam uređuje.",
+      "industry": "Zdravstvena nega",
+      "role": "Web Developer",
+      "challenge": "Služba nege mora da ostavi utisak poverenja i topline, a timu je trebalo da sam menja usluge, oglase za posao i kontakt podatke, bez pozivanja developera.",
+      "solution": [
+        "Napravio sam WordPress temu po meri u SCSS-u, sa Beaver Builder rasporedima, tako da tim vizuelno menja sadržaj, a dizajn ostaje dosledan."
+      ]
+    },
+    "flameguard": {
+      "summary": "Katalog proizvoda i online prodavnica za švedskog proizvođača protivpožarne zaštite, na WordPress-u i WooCommerce-u po meri.",
+      "industry": "Protivpožarna zaštita",
+      "role": "Web Developer",
+      "challenge": "Tehnički asortiman streha, fasada i ventilacionih otvora potkrovlja trebalo je lako pregledati po oblastima primene, uz bazu znanja za arhitekte i graditelje.",
+      "solution": [
+        "Razvio sam WordPress i WooCommerce rešenje po meri, sa strukturiranim podacima o proizvodima, navigacijom po oblastima primene i integrisanim chatom za podršku."
+      ]
+    },
+    "framia": {
+      "summary": "Švedska online prodavnica ramova za slike i paspartua, na WooCommerce-u, sa landing stranicama koje urednici sami prave.",
+      "industry": "Maloprodaja",
+      "role": "Web Developer",
+      "challenge": "Prodavnici su trebali elegantan izlog, jednostavan put od razgledanja do plaćanja i landing stranice za kampanje koje tim može sam da složi.",
+      "solution": [
+        "Napravio sam je na WordPress-u i WooCommerce-u, a za fleksibilne landing stranice koje urednici prave bez koda koristio sam Beaver Builder."
+      ]
+    },
+    "decem-development": {
+      "summary": "Korporativni sajt agencije Decem Development, u kojoj sam radio, napravljen kao WordPress tema po meri.",
+      "industry": "Softverska agencija",
+      "role": "Web Developer",
+      "challenge": "Sajt same agencije trebalo je da predstavi tim, usluge i izabrane radove kroz minimalistički, tipografski dizajn i da bude jednako doteran kao sajtovi koje agencija pravi za klijente.",
+      "solution": [
+        "Razvio sam ga kao WordPress temu po meri u PHP-u, sa MySQL bazom i SCSS-om, uz jednostavan markup i raspored veran tipografiji."
+      ]
+    },
+    "barkop": {
+      "summary": "Sajt za firmu koja se bavi iskopima i prevozom građevinskog materijala, napravljen u Next.js-u za kupce koji zovu sa telefona.",
+      "industry": "Građevina",
+      "role": "Web Developer",
+      "challenge": "Ljudi kojima trebaju iskop ili prevoz materijala uglavnom traže preko telefona i žele odmah da pozovu, pa su usluge i mehanizacija morale biti jasne, a poziv udaljen jedan dodir.",
+      "solution": [
+        "Napravio sam ga u Next.js-u, React-u i SCSS-u, sa rasporedom prilagođenim telefonima i dugmićima za poziv tačno tamo gde se posetioci odlučuju."
+      ]
+    },
+    "nenad-prevoz": {
+      "summary": "Sajt za selidbe i kombi prevoz, napravljen da donosi pozive, sa dugmićima za direktan poziv na celoj stranici.",
+      "industry": "Prevoz",
+      "role": "Web Developer",
+      "challenge": "Sajt ima jedan zadatak: da ljudi kojima treba selidba ili prevoz podignu telefon i pozovu.",
+      "solution": [
+        "Napravio sam ga u Next.js-u i React-u, sa SCSS rasporedom prilagođenim telefonima i dugmićima za direktan poziv na celoj stranici."
+      ]
+    }
+  },
+  "projectPage": {
+    "back": "Svi projekti",
+    "challenge": "Izazov",
+    "solution": "Šta sam uradio",
+    "role": "Moja uloga",
+    "industry": "Delatnost",
+    "type": "Tip",
+    "technologies": "Tehnologije",
+    "metaTitle": "{title} - {category} | Milenko Ilić"
   },
   "about": {
     "label": "O meni",
     "title": "Ko sam ja",
-    "bio": "Zdravo! Ja sam Milenko Ilić, Full Stack Developer sa više od 5 godina iskustva u razvoju web aplikacija. Specijalizovan sam za pravljenje brzih i skalabilnih rešenja uz pomoć modernih tehnologija. Od ideje do produkcije – brinem o svakom detalju.",
+    "bio": "Zdravo! Ja sam Milenko Ilić, Full Stack Developer sa više od {years} godina iskustva u razvoju web aplikacija. Specijalizovan sam za pravljenje brzih i skalabilnih rešenja uz pomoć modernih tehnologija. Od ideje do produkcije – brinem o svakom detalju.",
+    "studio": "Vodim i <link>Milix Development</link>, firmu za razvoj softvera iz Novog Sada koja pravi web i mobilne aplikacije, sajtove i online prodavnice za firme.",
     "location": "Novi Sad, Srbija",
     "experience": "Iskustvo",
     "skills": "Veštine i tehnologije",

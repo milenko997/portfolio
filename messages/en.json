@@ -21,12 +21,144 @@
   "projectsPage": {
     "label": "Portfolio",
     "title": "All Projects",
-    "back": "Back"
+    "back": "Back",
+    "all": "All",
+    "filterLabel": "Filter projects by category"
+  },
+  "categories": {
+    "webApp": "Web App",
+    "mobileApp": "Mobile App",
+    "website": "Website",
+    "ecommerce": "E-commerce"
+  },
+  "projectItems": {
+    "itv-odds-finder": {
+      "summary": "Odds comparison app for iOS, Android and the web. I work across the Flutter app and the Java and Go services behind it.",
+      "industry": "Sports Betting",
+      "role": "Full Stack Developer",
+      "challenge": "Odds move constantly, and users expect to compare every bookmaker's price for a football match, horse race or tennis event at a glance, then place the bet straight away. The app has to stay fast and reliable when decisions are made in real time.",
+      "solution": [
+        "I build new features across the product, in the Flutter app as well as in the Java and Go backend services that power it.",
+        "A big part of the work is keeping the app fast and dependable for real-time betting, so prices, the bet slip and the move to a bookmaker all feel instant."
+      ]
+    },
+    "nourishmates": {
+      "summary": "Meal planning and nutrition tracking platform with a Laravel REST API and a reactive Svelte frontend.",
+      "industry": "Health & Nutrition",
+      "role": "Full Stack Developer",
+      "challenge": "Nutrition tracking only works if logging a meal takes seconds. The product needed meal plans, a food log, nutrient tracking and a community recipe library, without ever feeling like a spreadsheet.",
+      "solution": [
+        "I designed the Laravel REST API and the MySQL data model behind users, meals, recipes and nutrients, and built the Svelte frontend on top of it.",
+        "Keeping the API separate from the frontend let the interface stay fast and reactive, with a calm design that makes daily tracking feel effortless."
+      ]
+    },
+    "transporteri": {
+      "summary": "Logistics marketplace connecting clients with transport companies. Laravel backend, React frontend, PHPUnit tests.",
+      "industry": "Logistics",
+      "role": "Full Stack Developer",
+      "challenge": "Two kinds of users, clients and transport companies, needed their own accounts, listings and requests, and each side had to see only what belongs to them.",
+      "solution": [
+        "I built the Laravel and MySQL backend with authentication and account-based access to profiles, listings and requests, and covered the core flows with PHPUnit tests.",
+        "The React frontend is made for quick, everyday use, so posting or answering a transport request takes only a few steps."
+      ]
+    },
+    "strn": {
+      "summary": "Editorial website for a brand and web development collective, built with Next.js, Tailwind CSS and API-driven content.",
+      "industry": "Creative Agency",
+      "role": "Web Developer",
+      "challenge": "The collective wanted a site that feels bold and calm at the same time, with large typography, striking visuals and smooth interactions, without giving up load speed.",
+      "solution": [
+        "I built it with Next.js, React and Tailwind CSS and pulled the portfolio content in through API integrations, so the team can update their work without touching code."
+      ]
+    },
+    "caffe-milion-xl": {
+      "summary": "Website for a café and lounge bar, built with Next.js and a lightweight SCSS design system.",
+      "industry": "Hospitality",
+      "role": "Web Developer",
+      "challenge": "Most guests look the venue up on their phones, so the site had to capture its atmosphere, with a gallery, events and the billiards area, and still load quickly on mobile.",
+      "solution": [
+        "I built it with Next.js and React and a small SCSS design system, keeping the pages light so the photo-heavy content loads fast on mobile."
+      ]
+    },
+    "popgor": {
+      "summary": "Company website for a construction materials supplier, built with Next.js for speed and search visibility.",
+      "industry": "Construction Materials",
+      "role": "Web Developer",
+      "challenge": "Customers look for building materials online, so the site had to rank well and turn visits into enquiries while clearly presenting a wide product range, references and partners.",
+      "solution": [
+        "I built it with Next.js, React and SCSS, with server-rendered pages and clean metadata for search, and a layout that leads visitors towards sending an enquiry."
+      ]
+    },
+    "mpka": {
+      "summary": "Website for a home-care service in Karlsruhe, with a custom WordPress theme the team edits on its own.",
+      "industry": "Healthcare",
+      "role": "Web Developer",
+      "challenge": "A care service has to come across as trustworthy and warm, and the team needed to update services, job openings and contact details without calling a developer.",
+      "solution": [
+        "I built a custom WordPress theme in SCSS with Beaver Builder layouts, so the team edits content visually while the design stays consistent."
+      ]
+    },
+    "flameguard": {
+      "summary": "Product catalogue and webshop for a Swedish fire protection manufacturer, built on custom WordPress and WooCommerce.",
+      "industry": "Fire Protection",
+      "role": "Web Developer",
+      "challenge": "A technical product range of eaves, facades and attic vents had to be easy to browse by application area, next to a knowledge bank for architects and builders.",
+      "solution": [
+        "I developed a custom WordPress and WooCommerce solution with structured product data, navigation by application area and an integrated support chat."
+      ]
+    },
+    "framia": {
+      "summary": "Swedish webshop for picture frames and passe-partouts, on WooCommerce with landing pages editors build themselves.",
+      "industry": "Retail",
+      "role": "Web Developer",
+      "challenge": "The shop needed an elegant storefront, a smooth path from browsing to checkout, and campaign landing pages the team could put together on its own.",
+      "solution": [
+        "I built it on WordPress and WooCommerce and used Beaver Builder for flexible landing pages that editors assemble without code."
+      ]
+    },
+    "decem-development": {
+      "summary": "Corporate website for Decem Development, the web agency I worked at, built as a custom WordPress theme.",
+      "industry": "Software Agency",
+      "role": "Web Developer",
+      "challenge": "The agency's own site had to present its team, services and selected work with a minimal, typographic design, and be as polished as the sites it builds for clients.",
+      "solution": [
+        "I developed it as a custom WordPress theme in PHP, MySQL and SCSS, keeping the markup lean and the layout true to the typography."
+      ]
+    },
+    "barkop": {
+      "summary": "Website for an excavation and construction transport company, built with Next.js for customers calling from their phones.",
+      "industry": "Construction",
+      "role": "Web Developer",
+      "challenge": "People who need excavation or material transport usually search on their phones and want to call right away, so services and machinery had to be clear and calling had to be one tap away.",
+      "solution": [
+        "I built it with Next.js, React and SCSS, with a mobile-first layout and call buttons placed right where visitors make up their minds."
+      ]
+    },
+    "nenad-prevoz": {
+      "summary": "Lead-generation website for a moving and van transport service, with click-to-call throughout.",
+      "industry": "Transport",
+      "role": "Web Developer",
+      "challenge": "The site has one job: getting people who need a move or transport to pick up the phone.",
+      "solution": [
+        "I built it with Next.js and React, with a mobile-first SCSS layout and click-to-call actions throughout the page."
+      ]
+    }
+  },
+  "projectPage": {
+    "back": "All projects",
+    "challenge": "The challenge",
+    "solution": "What I did",
+    "role": "My role",
+    "industry": "Industry",
+    "type": "Type",
+    "technologies": "Technologies",
+    "metaTitle": "{title} - {category} | Milenko Ilic"
   },
   "about": {
     "label": "About Me",
     "title": "Who I Am",
-    "bio": "Hi! I'm Milenko Ilić, a Full Stack Developer with 5+ years of experience building web applications. I focus on clean, scalable solutions using modern technologies — from initial concept all the way to deployment.",
+    "bio": "Hi! I'm Milenko Ilić, a Full Stack Developer with {years}+ years of experience building web applications. I focus on clean, scalable solutions using modern technologies — from initial concept all the way to deployment.",
+    "studio": "I also run <link>Milix Development</link>, a software development company from Novi Sad that builds web and mobile apps, websites and online stores for businesses.",
     "location": "Novi Sad, Serbia",
     "experience": "Experience",
     "skills": "Skills & Technologies",

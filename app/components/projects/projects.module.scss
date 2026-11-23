@@ -1,6 +1,5 @@
 @use "../../styles/variables.scss" as *;
 @use "../../styles/mixins.scss" as *;
-@use "../../styles/project-card.scss" as *;
 
 .projects {
   padding: 120px 0;
@@ -36,8 +35,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-@include project-card-styles;
 
 .viewAll {
   display: flex;
