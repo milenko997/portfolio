@@ -1,30 +1,23 @@
 import { MetadataRoute } from 'next'
 import { projects } from '@/app/data/projects'
+import { routing } from '@/i18n/routing'
+import { languageAlternates, localizedUrl } from '@/i18n/metadata'
+
+type ChangeFrequency = MetadataRoute.Sitemap[number]['changeFrequency']
+
+// One entry per language version, each listing all versions as alternates.
+const entries = (path: string, changeFrequency: ChangeFrequency, priority: number) =>
+  routing.locales.map((locale) => ({
+    url: localizedUrl(locale, path),
+    changeFrequency,
+    priority,
+    alternates: { languages: languageAlternates(path) },
+  }))
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    {
-      url: 'https://milenkoilic.dev/',
-      lastModified: new Date('2026-01-01'),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: 'https://milenkoilic.dev/projects',
-      lastModified: new Date('2026-01-01'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    ...projects.map((project) => ({
-      url: `https://milenkoilic.dev/projects/${project.slug}`,
-      changeFrequency: 'yearly' as const,
-      priority: 0.6,
-      alternates: {
-        languages: {
-          en: `https://milenkoilic.dev/projects/${project.slug}`,
-          sr: `https://milenkoilic.dev/sr/projects/${project.slug}`,
-        },
-      },
-    })),
+    ...entries('/', 'monthly', 1),
+    ...entries('/projects', 'monthly', 0.8),
+    ...projects.flatMap((project) => entries(`/projects/${project.slug}`, 'yearly', 0.6)),
   ]
 }

@@ -1,4 +1,16 @@
 {
+  "meta": {
+    "home": {
+      "title": "Milenko Ilić - Full Stack Developer iz Novog Sada",
+      "description": "Portfolio Milenka Ilića, Full Stack developera specijalizovanog za Laravel, React i WordPress projekte."
+    },
+    "projects": {
+      "title": "Projekti - Milenko Ilić | Full Stack Developer",
+      "description": "Pogledajte sve projekte Milenka Ilića, Full Stack developera specijalizovanog za Laravel, React i WordPress."
+    },
+    "siteName": "Milenko Ilić Full Stack Developer",
+    "imageAlt": "Portfolio Milenka Ilića"
+  },
   "nav": {
     "home": "Početna",
     "projects": "Projekti",
@@ -8,9 +20,10 @@
   },
   "hero": {
     "status": "Dostupan za projekte",
-    "tagline": "Pravim web aplikacije koje se pamte",
+    "tagline": "Pravim web i mobilne aplikacije od početka do kraja, od backend servisa i API-ja do brzih i doteranih interfejsa.",
     "viewProjects": "Pogledaj projekte",
-    "getInTouch": "Kontaktiraj me"
+    "getInTouch": "Kontaktiraj me",
+    "downloadCv": "Preuzmi CV"
   },
   "projects": {
     "label": "Portfolio",
@@ -197,6 +210,7 @@
     "skillCategories": {
       "frontend": "Frontend",
       "backend": "Backend",
+      "mobile": "Mobilne aplikacije",
       "devops": "DevOps",
       "tools": "Alati"
     }
@@ -219,6 +233,13 @@
     "errorAlert": "Došlo je do greške. Pokušaj ponovo."
   },
   "footer": {
-    "rights": "Sva prava zadržana."
+    "rights": "Sva prava zadržana.",
+    "cookieSettings": "Podešavanja kolačića"
+  },
+  "cookies": {
+    "label": "Pristanak na kolačiće",
+    "text": "Želeo bih da koristim Google Analytics kolačiće da vidim kako posetioci koriste sajt. Postavljaju se samo ako ih dozvolite.",
+    "accept": "Dozvoli",
+    "decline": "Odbij"
   }
 }

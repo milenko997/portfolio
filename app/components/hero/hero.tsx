@@ -29,6 +29,10 @@ const Hero = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
                     <a href="#contact" className="btn btn-outline btn-lg">{t('getInTouch')}</a>
+                    <a href="/milenko-ilic-cv.pdf" download="Milenko-Ilic-CV.pdf" className="btn btn-outline btn-lg">
+                    {t('downloadCv')}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+                    </a>
                 </div>
 
                 <div className={styles.socialLinks}>

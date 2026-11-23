@@ -1,0 +1,46 @@
+@use "../../styles/mixins.scss" as *;
+
+.banner {
+  @include card;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 560px;
+  margin-left: auto;
+  padding: 18px 20px;
+  background: var(--bg-card);
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
+
+  p {
+    flex: 1 1 260px;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-light);
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.settings {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--text-primary);
+  }
+}

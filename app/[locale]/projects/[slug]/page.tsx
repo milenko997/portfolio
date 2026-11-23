@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { routing } from '@/i18n/routing';
+import { localizedUrl, ogLocale, pageAlternates } from '@/i18n/metadata';
 import Header from '@/app/components/siteHeader';
 import Footer from '@/app/components/siteFooter';
 import { getProject, type Project } from '@/app/data/projects';
@@ -12,12 +12,6 @@ import styles from './page.module.scss';
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
-
-const SITE_URL = 'https://milenkoilic.dev';
-
-// The default locale has no prefix ("/projects/strn"), the others do ("/sr/projects/strn").
-const projectUrl = (locale: string, slug: string) =>
-  `${SITE_URL}${locale === routing.defaultLocale ? '' : `/${locale}`}/projects/${slug}`;
 
 async function getContext(params: Props['params']) {
   const { locale, slug } = await params;
@@ -32,23 +26,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, project, t, category } = await getContext(params);
   const title = t('projectPage.metaTitle', { title: project.title, category: category(project) });
   const description = t(`projectItems.${project.slug}.summary`);
-  const url = projectUrl(locale, project.slug);
+  const path = `/projects/${project.slug}`;
+  const url = localizedUrl(locale, path);
 
   return {
     title,
     description,
-    alternates: {
-      canonical: url,
-      languages: {
-        ...Object.fromEntries(routing.locales.map((l) => [l, projectUrl(l, project.slug)])),
-        'x-default': projectUrl(routing.defaultLocale, project.slug),
-      },
-    },
+    alternates: pageAlternates(locale, path),
     openGraph: {
       title,
       description,
       url,
-      siteName: 'Milenko Ilic Full Stack Developer',
+      siteName: t('meta.siteName'),
+      locale: ogLocale[locale],
       images: [{ url: project.img.src, width: project.img.width, height: project.img.height, alt: project.title }],
       type: 'website',
     },

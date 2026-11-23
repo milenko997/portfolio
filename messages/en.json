@@ -1,4 +1,16 @@
 {
+  "meta": {
+    "home": {
+      "title": "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
+      "description": "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects."
+    },
+    "projects": {
+      "title": "Projects - Milenko Ilic | Full Stack Developer",
+      "description": "Browse all projects by Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress."
+    },
+    "siteName": "Milenko Ilic Full Stack Developer",
+    "imageAlt": "Milenko Ilic Portfolio"
+  },
   "nav": {
     "home": "Home",
     "projects": "Projects",
@@ -8,9 +20,10 @@
   },
   "hero": {
     "status": "Open to opportunities",
-    "tagline": "Building digital experiences that matter",
+    "tagline": "I build web and mobile apps end to end, from backend services and APIs to fast, polished interfaces.",
     "viewProjects": "View Projects",
-    "getInTouch": "Get In Touch"
+    "getInTouch": "Get In Touch",
+    "downloadCv": "Download CV"
   },
   "projects": {
     "label": "Portfolio",
@@ -197,6 +210,7 @@
     "skillCategories": {
       "frontend": "Frontend",
       "backend": "Backend",
+      "mobile": "Mobile",
       "devops": "DevOps",
       "tools": "Tools"
     }
@@ -219,6 +233,13 @@
     "errorAlert": "Something went wrong."
   },
   "footer": {
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "cookieSettings": "Cookie settings"
+  },
+  "cookies": {
+    "label": "Cookie consent",
+    "text": "I'd like to use Google Analytics cookies to see how visitors use this site. They are only set if you allow them.",
+    "accept": "Allow",
+    "decline": "Decline"
   }
 }

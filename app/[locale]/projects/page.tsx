@@ -1,32 +1,40 @@
 import type { Metadata } from 'next';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+import { SITE_URL, localizedUrl, ogLocale, pageAlternates } from '@/i18n/metadata';
 import Header from '@/app/components/siteHeader';
 import Footer from '@/app/components/siteFooter';
 import ProjectsGrid from './projectsGrid';
 import styles from './page.module.scss';
 
-export const metadata: Metadata = {
-  title: 'Projects - Milenko Ilic | Full Stack Developer',
-  description: 'Browse all projects by Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress.',
-  keywords: ['Milenko Ilic', 'Full Stack Developer', 'Laravel developer', 'React developer', 'WordPress developer', 'web development projects', 'portfolio'],
-  alternates: { canonical: 'https://milenkoilic.dev/projects' },
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: 'Projects - Milenko Ilic | Full Stack Developer',
-    description: 'Browse all projects by Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress.',
-    url: 'https://milenkoilic.dev/projects',
-    siteName: 'Milenko Ilic Full Stack Developer',
-    images: [{ url: 'https://milenkoilic.dev/og-image.png', width: 1200, height: 630, alt: 'Milenko Ilic Portfolio' }],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Projects - Milenko Ilic | Full Stack Developer',
-    description: 'Browse all projects by Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress.',
-    images: ['https://milenkoilic.dev/og-image.png'],
-  },
-};
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
+  const title = t('projects.title');
+  const description = t('projects.description');
+  const image = { url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: t('imageAlt') };
+
+  return {
+    title,
+    description,
+    keywords: ['Milenko Ilic', 'Full Stack Developer', 'Laravel developer', 'React developer', 'WordPress developer', 'web development projects', 'portfolio'],
+    alternates: pageAlternates(locale, '/projects'),
+    robots: { index: true, follow: true },
+    openGraph: {
+      title,
+      description,
+      url: localizedUrl(locale, '/projects'),
+      siteName: t('siteName'),
+      locale: ogLocale[locale],
+      images: [image],
+      type: 'website',
+    },
+    twitter: { card: 'summary_large_image', title, description, images: [image.url] },
+  };
+}
 
 export default function ProjectsPage() {
   const t = useTranslations('projectsPage');

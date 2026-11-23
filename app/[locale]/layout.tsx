@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import Script from 'next/script';
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SITE_URL, localizedUrl, ogLocale, pageAlternates } from '@/i18n/metadata';
+import Analytics from '@/app/components/analytics';
 import '../globals.css';
 import '../globals.scss';
 
@@ -19,30 +19,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://milenkoilic.dev"),
-  alternates: {
-    canonical: "https://milenkoilic.dev/",
-  },
-  title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
-  description: "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
-  keywords: ["Milenko Ilic", "Full Stack Developer", "Laravel developer", "React developer", "WordPress developer"],
-  robots: { index: true, follow: true },
-  openGraph: {
-    title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
-    description: "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
-    url: "https://milenkoilic.dev/",
-    siteName: "Milenko Ilic Full Stack Developer",
-    images: [{ url: "https://milenkoilic.dev/og-image.png", width: 1200, height: 630, alt: "Milenko Ilic Portfolio" }],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
-    description: "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects.",
-    images: ["https://milenkoilic.dev/og-image.png"],
-  },
-};
+type MetadataProps = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'meta' });
+  const title = t('home.title');
+  const description = t('home.description');
+  const image = { url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: t('imageAlt') };
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    alternates: pageAlternates(locale),
+    title,
+    description,
+    keywords: ["Milenko Ilic", "Full Stack Developer", "Laravel developer", "React developer", "WordPress developer"],
+    robots: { index: true, follow: true },
+    openGraph: {
+      title,
+      description,
+      url: localizedUrl(locale),
+      siteName: t('siteName'),
+      locale: ogLocale[locale],
+      images: [image],
+      type: "website",
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image.url] },
+  };
+}
 
 type Props = {
   children: React.ReactNode;
@@ -77,29 +81,11 @@ export default async function LocaleLayout({ children, params }: Props) {
             }),
           }}
         />
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <SpeedInsights />
         <NextIntlClientProvider messages={messages}>
           {children}
+          <Analytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         </NextIntlClientProvider>
       </body>
     </html>

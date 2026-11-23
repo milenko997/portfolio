@@ -171,6 +171,11 @@
   .skillsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  // With an odd number of groups, the last one spans both columns instead of leaving a gap.
+  .skillCard:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 .skillCard {
