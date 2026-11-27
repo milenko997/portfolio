@@ -175,7 +175,7 @@
   "about": {
     "label": "O meni",
     "title": "Ko sam ja",
-    "bio": "Zdravo! Ja sam Milenko Ilić, Full Stack Developer sa više od {years} godina iskustva u razvoju web i mobilnih aplikacija. Radim kroz ceo stek, od servisa u Javi, Go-u, Pythonu i PHP-u do React i Flutter interfejsa, i pravim brza i skalabilna rešenja – od ideje do produkcije. LLM-ovi su deo mog svakodnevnog rada: razvijam uz AI alate i pravim AI agente, MCP servere i RAG pipeline-ove.",
+    "bio": "Zdravo! Ja sam Milenko Ilić, Full Stack Developer sa više od {years} godina iskustva u razvoju web i mobilnih aplikacija. Radim kroz ceo stek, od servisa u Javi, Go-u, Pythonu i PHP-u do React i Flutter interfejsa, i pravim brza i skalabilna rešenja – od ideje do produkcije. LLM-ovi su deo mog svakodnevnog rada: u svakodnevnom razvoju koristim AI alate i AI agente.",
     "studio": "Vodim i <link>Milix Development</link>, firmu za razvoj softvera iz Novog Sada koja pravi web i mobilne aplikacije, sajtove i online prodavnice za firme.",
     "location": "Novi Sad, Srbija",
     "experience": "Iskustvo",

@@ -175,7 +175,7 @@
   "about": {
     "label": "About Me",
     "title": "Who I Am",
-    "bio": "Hi! I'm Milenko Ilić, a Full Stack Developer with {years}+ years of experience building web and mobile applications. I work across the stack, from Java, Go, Python and PHP services to React and Flutter frontends, and focus on clean, scalable solutions from initial concept all the way to deployment. LLMs are part of my everyday work: I develop with AI-assisted tools and build AI agents, MCP servers and RAG pipelines.",
+    "bio": "Hi! I'm Milenko Ilić, a Full Stack Developer with {years}+ years of experience building web and mobile applications. I work across the stack, from Java, Go, Python and PHP services to React and Flutter frontends, and focus on clean, scalable solutions from initial concept all the way to deployment. LLMs are part of my everyday work: I use AI-assisted tools and AI agents in day-to-day development.",
     "studio": "I also run <link>Milix Development</link>, a software development company from Novi Sad that builds web and mobile apps, websites and online stores for businesses.",
     "location": "Novi Sad, Serbia",
     "experience": "Experience",

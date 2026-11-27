@@ -103,8 +103,8 @@ const About = () => {
                             <h4>{t('skillCategories.ai')}</h4>
                         </div>
                         <div className={style.skillTags}>
-                            <span>LLMs</span><span>AI Agents</span><span>MCP</span>
-                            <span>RAG</span><span>Prompt Engineering</span><span>Claude Code</span>
+                            <span>LLMs</span><span>AI Agents</span><span>AI-Assisted Development</span>
+                            <span>Prompt Engineering</span><span>Claude Code</span>
                         </div>
                         </div>
 
