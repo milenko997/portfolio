@@ -60,9 +60,10 @@ const Hero = () => {
 {'  '}role: <span className={styles.tkString}>&apos;Full Stack Developer&apos;</span>,{'\n'}
 {'  '}location: <span className={styles.tkString}>&apos;Novi Sad, Serbia&apos;</span>,{'\n'}
 {'  '}stack: [{'\n'}
-{'    '}<span className={styles.tkString}>&apos;React&apos;</span>, <span className={styles.tkString}>&apos;Next.js&apos;</span>,{'\n'}
-{'    '}<span className={styles.tkString}>&apos;Laravel&apos;</span>, <span className={styles.tkString}>&apos;WordPress&apos;</span>,{'\n'}
+{'    '}<span className={styles.tkString}>&apos;React&apos;</span>, <span className={styles.tkString}>&apos;Next.js&apos;</span>, <span className={styles.tkString}>&apos;Flutter&apos;</span>,{'\n'}
+{'    '}<span className={styles.tkString}>&apos;Java&apos;</span>, <span className={styles.tkString}>&apos;Go&apos;</span>, <span className={styles.tkString}>&apos;Laravel&apos;</span>,{'\n'}
 {'  '}],{'\n'}
+{'  '}ai: [<span className={styles.tkString}>&apos;LLMs&apos;</span>, <span className={styles.tkString}>&apos;Agents&apos;</span>, <span className={styles.tkString}>&apos;MCP&apos;</span>],{'\n'}
 {'  '}available: <span className={styles.tkKeyword}>true</span>,{'\n'}
 {'}'};
                         </pre>

@@ -2,11 +2,11 @@
   "meta": {
     "home": {
       "title": "Milenko Ilić - Full Stack Developer iz Novog Sada",
-      "description": "Portfolio Milenka Ilića, Full Stack developera specijalizovanog za Laravel, React i WordPress projekte."
+      "description": "Portfolio Milenka Ilića, Full Stack developera koji radi sa React, Laravel, Java, Go i Flutter tehnologijama, uz AI agente i LLM alate."
     },
     "projects": {
       "title": "Projekti - Milenko Ilić | Full Stack Developer",
-      "description": "Pogledajte sve projekte Milenka Ilića, Full Stack developera specijalizovanog za Laravel, React i WordPress."
+      "description": "Pogledajte sve projekte Milenka Ilića, Full Stack developera koji radi sa React, Laravel, Java, Go i Flutter tehnologijama."
     },
     "siteName": "Milenko Ilić Full Stack Developer",
     "imageAlt": "Portfolio Milenka Ilića"
@@ -25,7 +25,7 @@
   },
   "hero": {
     "status": "Dostupan za projekte",
-    "tagline": "Pravim web i mobilne aplikacije od početka do kraja, od backend servisa i API-ja do brzih i doteranih interfejsa.",
+    "tagline": "Pravim web i mobilne aplikacije od početka do kraja, od backenda u Javi, Go-u, Pythonu i PHP-u do brzih i doteranih interfejsa, uz LLM-ove i AI agente u svakodnevnom radu.",
     "viewProjects": "Pogledaj projekte",
     "getInTouch": "Kontaktiraj me",
     "downloadCv": "Preuzmi CV"
@@ -175,7 +175,7 @@
   "about": {
     "label": "O meni",
     "title": "Ko sam ja",
-    "bio": "Zdravo! Ja sam Milenko Ilić, Full Stack Developer sa više od {years} godina iskustva u razvoju web aplikacija. Specijalizovan sam za pravljenje brzih i skalabilnih rešenja uz pomoć modernih tehnologija. Od ideje do produkcije – brinem o svakom detalju.",
+    "bio": "Zdravo! Ja sam Milenko Ilić, Full Stack Developer sa više od {years} godina iskustva u razvoju web i mobilnih aplikacija. Radim kroz ceo stek, od servisa u Javi, Go-u, Pythonu i PHP-u do React i Flutter interfejsa, i pravim brza i skalabilna rešenja – od ideje do produkcije. LLM-ovi su deo mog svakodnevnog rada: razvijam uz AI alate i pravim AI agente, MCP servere i RAG pipeline-ove.",
     "studio": "Vodim i <link>Milix Development</link>, firmu za razvoj softvera iz Novog Sada koja pravi web i mobilne aplikacije, sajtove i online prodavnice za firme.",
     "location": "Novi Sad, Srbija",
     "experience": "Iskustvo",
@@ -185,13 +185,13 @@
         "title": "Full Stack Developer",
         "company": "Funteron Limited",
         "period": "Jul 2026 – danas",
-        "description": "Radim na mobilnoj aplikaciji za sportsko klađenje, sa Flutter frontendom i backend servisima u Javi i Go-u. Razvijam nove funkcionalnosti i vodim računa da aplikacija bude brza i pouzdana za klađenje u realnom vremenu."
+        "description": "Radim na mobilnoj aplikaciji za sportsko klađenje, sa Flutter frontendom i backend servisima u Javi i Go-u. Razvijam nove funkcionalnosti i vodim računa da aplikacija bude brza i pouzdana za klađenje u realnom vremenu. LLM-ove i AI agente koristim svakodnevno u razvoju."
       },
       {
         "title": "Web Developer",
         "company": "Omnistreak",
         "period": "Sep 2025 – Jul 2026",
-        "description": "Razvijao sam i održavao veliki WordPress webshop za klijenta iz SAD-a. Kreirao sam nove stranice, dodavao funkcionalnosti po meri i vodio računa o performansama i stabilnosti sajta."
+        "description": "Razvijao sam i održavao veliki WordPress webshop za klijenta iz SAD-a. Kreirao sam nove stranice, dodavao funkcionalnosti po meri i vodio računa o performansama i stabilnosti sajta. Radio sam i na zasebnom projektu napravljenom u Pythonu."
       },
       {
         "title": "PHP Developer",
@@ -209,13 +209,15 @@
         "title": "Freelance Web Developer",
         "company": "Freelance",
         "period": "Jun 2019 – danas",
-        "description": "Radim WordPress i React projekte za klijente širom sveta – sajtovi, landing stranice, blogovi i eCommerce. Vodim projekte od ideje do lansiranja i implementiram rešenja po meri."
+        "description": "Radim WordPress i React projekte za klijente iz Evrope i Severne Amerike – sajtovi, landing stranice, blogovi i eCommerce. Vodim projekte od ideje do lansiranja i implementiram rešenja po meri."
       }
     ],
     "skillCategories": {
       "frontend": "Frontend",
       "backend": "Backend",
       "mobile": "Mobilne aplikacije",
+      "ai": "AI i LLM",
+      "cms": "CMS i e-commerce",
       "devops": "DevOps",
       "tools": "Alati"
     }

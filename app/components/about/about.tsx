@@ -66,7 +66,7 @@ const About = () => {
                         </div>
                         <div className={style.skillTags}>
                             <span>React</span><span>Next.js</span><span>TypeScript</span>
-                            <span>SCSS</span><span>Tailwind</span><span>Gutenberg Blocks</span>
+                            <span>Svelte</span><span>SCSS</span><span>Tailwind</span>
                         </div>
                         </div>
 
@@ -78,8 +78,8 @@ const About = () => {
                             <h4>{t('skillCategories.backend')}</h4>
                         </div>
                         <div className={style.skillTags}>
-                            <span>PHP</span><span>Laravel</span><span>MySQL</span>
-                            <span>REST APIs</span><span>WordPress</span>
+                            <span>Java</span><span>Go</span><span>Python</span><span>PHP</span><span>Laravel</span>
+                            <span>MySQL</span><span>REST APIs</span>
                         </div>
                         </div>
 
@@ -98,13 +98,39 @@ const About = () => {
                         <div className={style.skillCard}>
                         <div className={style.skillHeader}>
                             <div className={style.skillIcon}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+                            </div>
+                            <h4>{t('skillCategories.ai')}</h4>
+                        </div>
+                        <div className={style.skillTags}>
+                            <span>LLMs</span><span>AI Agents</span><span>MCP</span>
+                            <span>RAG</span><span>Prompt Engineering</span><span>Claude Code</span>
+                        </div>
+                        </div>
+
+                        <div className={style.skillCard}>
+                        <div className={style.skillHeader}>
+                            <div className={style.skillIcon}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                            </div>
+                            <h4>{t('skillCategories.cms')}</h4>
+                        </div>
+                        <div className={style.skillTags}>
+                            <span>WordPress</span><span>WooCommerce</span>
+                            <span>Gutenberg Blocks</span><span>Elementor</span>
+                        </div>
+                        </div>
+
+                        <div className={style.skillCard}>
+                        <div className={style.skillHeader}>
+                            <div className={style.skillIcon}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
                             </div>
                             <h4>{t('skillCategories.devops')}</h4>
                         </div>
                         <div className={style.skillTags}>
                             <span>Linux</span><span>Docker</span><span>Git</span>
-                            <span>CI/CD</span><span>Nginx/Apache</span>
+                            <span>CI/CD</span><span>Nginx/Apache</span><span>Grafana</span>
                         </div>
                         </div>
 
@@ -117,7 +143,7 @@ const About = () => {
                         </div>
                         <div className={style.skillTags}>
                             <span>VS Code</span><span>Figma</span><span>Postman</span>
-                            <span>Jira</span><span>Elementor</span><span>WooCommerce</span>
+                            <span>Jira</span>
                         </div>
                         </div>
                     </div>

@@ -2,11 +2,11 @@
   "meta": {
     "home": {
       "title": "Milenko Ilic - Full Stack Developer based in Novi Sad, Serbia",
-      "description": "Portfolio of Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress projects."
+      "description": "Portfolio of Milenko Ilic - Full Stack Developer working with React, Laravel, Java, Go and Flutter, plus AI agents and LLM tooling."
     },
     "projects": {
       "title": "Projects - Milenko Ilic | Full Stack Developer",
-      "description": "Browse all projects by Milenko Ilic - Full Stack Developer specializing in Laravel, React, and WordPress."
+      "description": "Browse all projects by Milenko Ilic - Full Stack Developer working with React, Laravel, Java, Go and Flutter."
     },
     "siteName": "Milenko Ilic Full Stack Developer",
     "imageAlt": "Milenko Ilic Portfolio"
@@ -25,7 +25,7 @@
   },
   "hero": {
     "status": "Open to opportunities",
-    "tagline": "I build web and mobile apps end to end, from backend services and APIs to fast, polished interfaces.",
+    "tagline": "I build web and mobile apps end to end, from Java, Go, Python and PHP backends to fast, polished interfaces, with LLMs and AI agents in my daily workflow.",
     "viewProjects": "View Projects",
     "getInTouch": "Get In Touch",
     "downloadCv": "Download CV"
@@ -175,7 +175,7 @@
   "about": {
     "label": "About Me",
     "title": "Who I Am",
-    "bio": "Hi! I'm Milenko Ilić, a Full Stack Developer with {years}+ years of experience building web applications. I focus on clean, scalable solutions using modern technologies — from initial concept all the way to deployment.",
+    "bio": "Hi! I'm Milenko Ilić, a Full Stack Developer with {years}+ years of experience building web and mobile applications. I work across the stack, from Java, Go, Python and PHP services to React and Flutter frontends, and focus on clean, scalable solutions from initial concept all the way to deployment. LLMs are part of my everyday work: I develop with AI-assisted tools and build AI agents, MCP servers and RAG pipelines.",
     "studio": "I also run <link>Milix Development</link>, a software development company from Novi Sad that builds web and mobile apps, websites and online stores for businesses.",
     "location": "Novi Sad, Serbia",
     "experience": "Experience",
@@ -185,13 +185,13 @@
         "title": "Full Stack Developer",
         "company": "Funteron Limited",
         "period": "Jul 2026 - Present",
-        "description": "Working on a sports betting mobile app with a Flutter frontend and Java and Go backend services. Building new features across the product and keeping the app fast and reliable for real-time betting."
+        "description": "Working on a sports betting mobile app with a Flutter frontend and Java and Go backend services. Building new features across the product and keeping the app fast and reliable for real-time betting. Using LLMs and AI agents every day in development work."
       },
       {
         "title": "Web Developer",
         "company": "Omnistreak",
         "period": "Sep 2025 - Jul 2026",
-        "description": "Maintained and developed a large-scale custom WordPress webshop for a US-based client. Created new pages, implemented custom features, and ensured smooth performance and scalability across the site."
+        "description": "Maintained and developed a large-scale custom WordPress webshop for a US-based client. Created new pages, implemented custom features, and ensured smooth performance and scalability across the site. Also worked on a separate project built in Python."
       },
       {
         "title": "PHP Developer",
@@ -209,13 +209,15 @@
         "title": "Freelance Web Developer",
         "company": "Self-employed",
         "period": "Jun 2019 - Present",
-        "description": "Delivered custom WordPress and React solutions, including websites, landing pages, blogs, and eCommerce. Managed projects end-to-end and implemented custom themes, plugins, and Gutenberg solutions."
+        "description": "Delivered custom WordPress and React solutions for clients across Europe and North America, including websites, landing pages, blogs, and eCommerce. Managed projects end-to-end and implemented custom themes, plugins, and Gutenberg solutions."
       }
     ],
     "skillCategories": {
       "frontend": "Frontend",
       "backend": "Backend",
       "mobile": "Mobile",
+      "ai": "AI & LLMs",
+      "cms": "CMS & E-commerce",
       "devops": "DevOps",
       "tools": "Tools"
     }

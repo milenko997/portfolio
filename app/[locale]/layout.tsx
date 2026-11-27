@@ -70,7 +70,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               jobTitle: "Full Stack Developer",
               url: "https://milenkoilic.dev/",
               email: "milenko.ilic997@gmail.com",
-              description: "Full Stack Developer specializing in Laravel, React, and WordPress projects.",
+              description: "Full Stack Developer working with React, Laravel, Java, Go and Flutter, plus AI agents and LLM tooling.",
               sameAs: ["https://github.com/milenko997", "https://www.linkedin.com/in/milenko-ilic-637b7915b/"],
               address: { "@type": "PostalAddress", addressLocality: "Novi Sad", addressCountry: "RS" },
             }),
